@@ -7,8 +7,11 @@ public class Main {
         int anneeDeNaissance;
         anneeDeNaissance = 1998;
         float prixEssence = 1.78F;
-        char prenom = 'Q';
-        prenom = '\uFF27'; // un caractère encodé en format unicode
+        char prenomInitial = 'Q';
+        prenomInitial = '\uFF27'; // un caractère encodé en format unicode
         boolean homme = true;
+        String prenom = "Quentin";
+        prenom = "Q";
+        System.out.println(prenom);
     }
 }
