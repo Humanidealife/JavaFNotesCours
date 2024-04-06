@@ -12,6 +12,8 @@ public class Main {
         boolean homme = true;
         String prenom = "Quentin";
         prenom = "Q";
+        String monPrenom = prenom = "Etienne";
         System.out.println(prenom);
+        System.out.println(monPrenom);
     }
 }
