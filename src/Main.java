@@ -15,5 +15,18 @@ public class Main {
         String monPrenom = prenom = "Etienne";
         System.out.println(prenom);
         System.out.println(monPrenom);
+
+        int quotient = 5/2;
+        System.out.println(quotient);
+
+        int reste = 5%2;
+        System.out.println(reste);
+
+        float quotientFloat = 5F/2;
+        System.out.println(quotientFloat);
+
+        float quotientEntier = 5/2;
+        System.out.println(quotientEntier);
+
     }
 }
