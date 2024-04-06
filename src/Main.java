@@ -28,5 +28,18 @@ public class Main {
         float quotientEntier = 5/2;
         System.out.println(quotientEntier);
 
+        boolean estCeVrai = 20<30;
+        System.out.println(estCeVrai);
+
+        int nb1 = 25;
+        int nb2 =30;
+
+        boolean comparaison = nb1>nb2;
+        System.out.println(comparaison);
+
+        char char1 = 'c';
+        char char2 = 'j';
+        boolean comparaisonChar = char1 < char2;
+        System.out.println(comparaisonChar);
     }
 }
