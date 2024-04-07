@@ -76,5 +76,21 @@ public class Main {
         else {
             System.out.println(x + " est supérieur de 10 mais inférieur de 30");
         }
+
+        int somme = 0;
+        switch (somme) {
+            case 30 :
+                System.out.println("La somme est de 30");
+                break;
+            case 300 :
+                System.out.println("La somme est de 300");
+                break;
+            case 15 :
+                System.out.println("La somme est de " + somme);
+                break;
+            default :
+                System.out.println("Cette somme ne correspond à aucune proposition");
+                break;
+        }
     }
 }
