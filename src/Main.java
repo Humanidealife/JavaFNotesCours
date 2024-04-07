@@ -97,5 +97,25 @@ public class Main {
         for(int i=0; i<10; i++){
             System.out.println(i);
         }
+        System.out.println("la fin du for");
+        int nb3 = 0;
+        while (nb3<15){
+            System.out.println(nb3);
+            nb3+=3;
+            System.out.println(nb3);
+        }
+
+        boolean jeContinue = true;
+        while (jeContinue) {
+            System.out.println("Une itération");
+            jeContinue=false;
+        }
+
+       /*boolean caContinue = false;
+        do {
+            System.out.println("Une autre itération");
+            caContinue =true;
+        }
+        while (caContinue);*/
     }
 }
