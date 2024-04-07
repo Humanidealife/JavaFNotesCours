@@ -92,5 +92,10 @@ public class Main {
                 System.out.println("Cette somme ne correspond à aucune proposition");
                 break;
         }
+
+
+        for(int i=0; i<10; i++){
+            System.out.println(i);
+        }
     }
 }
