@@ -46,5 +46,10 @@ public class Main {
         boolean bool2 = false;
         boolean boolResultat = bool1&&!bool2;
         System.out.println(boolResultat);
+        age = 28;
+        int nb;
+        nb = age++;
+        System.out.println(age);
+        System.out.println(nb);
     }
 }
