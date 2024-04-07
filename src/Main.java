@@ -51,5 +51,20 @@ public class Main {
         nb = age++;
         System.out.println(age);
         System.out.println(nb);
+
+        String chaineConcatenee = "Voici une chaîne " + "concaténée";
+        System.out.println(chaineConcatenee);
+
+        String debut = "C'est le début";
+        String fin = " et puis c'est fini";
+        String histoire = debut + fin;
+        System.out.println(histoire);
+        System.out.println(debut +fin);
+
+        String numero = "Mon numéro est ";
+        System.out.println(numero+28);
+        System.out.println(numero+28+1);
+        System.out.println(numero+(28+1));
+
     }
 }
