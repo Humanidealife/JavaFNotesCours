@@ -66,12 +66,15 @@ public class Main {
         System.out.println(numero+28+1);
         System.out.println(numero+(28+1));
 
-        int x = 20;
-        if (x<10){
-            System.out.println(x + " est inférieur de 10");
+        int x = 42;
+        if (x<=10){
+            System.out.println(x + " est inférieur ou égale de 10");
+        }
+        else if (x>=30){
+            System.out.println(x + " est suprérieur de 30");
         }
         else {
-            System.out.println(x + " est supérieur ou égale à 10");
+            System.out.println(x + " est supérieur de 10 mais inférieur de 30");
         }
     }
 }
