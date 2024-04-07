@@ -116,6 +116,21 @@ public class Main {
             System.out.println("Une autre itération");
             caContinue =true;
         }
-        while (caContinue);*/
+        while (caContinue)*/
+
+        boolean maBoucle = true;
+        int chiffre = 0;
+        while (maBoucle){
+            chiffre++;
+            System.out.println("chiffre = " + chiffre);
+            if (chiffre == 5){
+                continue;
+            }
+            System.out.println("quand le chiffre vaut 5, on ne voit pas ce message");
+            if (chiffre ==10){
+                maBoucle = false;
+            }
+
+        }
     }
 }
