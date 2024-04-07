@@ -66,5 +66,9 @@ public class Main {
         System.out.println(numero+28+1);
         System.out.println(numero+(28+1));
 
+        int x = 5;
+        if (x<10){
+            System.out.println(x + " est inférieur de 10");
+        }
     }
 }
