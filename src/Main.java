@@ -41,5 +41,10 @@ public class Main {
         char char2 = 'j';
         boolean comparaisonChar = char1 < char2;
         System.out.println(comparaisonChar);
+
+        boolean bool1 = true;
+        boolean bool2 = false;
+        boolean boolResultat = bool1&&!bool2;
+        System.out.println(boolResultat);
     }
 }
