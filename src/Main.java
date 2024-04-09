@@ -130,7 +130,6 @@ public class Main {
             if (chiffre ==10){
                 maBoucle = false;
             }
-
         }
     }
 }
