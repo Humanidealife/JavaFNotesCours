@@ -133,5 +133,14 @@ public class Main {
         }
 
         Voiture maVoiture1 = new Voiture();
+        maVoiture1.nbPortes = 3;
+        maVoiture1.automatique = true;
+        maVoiture1.couleur = "Blanche";
+
+        System.out.println("La couleur de ma voiture 1 est de couleur " + maVoiture1.couleur);
+
+        maVoiture1.couleur = "Grise";
+        maVoiture1.nbPortes = 5;
+        System.out.println("Mais finalement la couleur de ma voiture 1 est de couleur " + maVoiture1.couleur + " et elle dispose de " + maVoiture1.nbPortes + " portes");
     }
 }
