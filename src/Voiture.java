@@ -1,6 +1,5 @@
 public class Voiture {
-   int nbPortes;
-   boolean automatique = false;
+   int nbPortes = 5;
+   boolean automatique;
    String couleur;
-   char premiereLettrePlaque;
 }

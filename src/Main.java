@@ -131,5 +131,7 @@ public class Main {
                 maBoucle = false;
             }
         }
+
+        Voiture maVoiture1 = new Voiture();
     }
 }
