@@ -142,5 +142,20 @@ public class Main {
         maVoiture1.couleur = "Grise";
         maVoiture1.nbPortes = 5;
         System.out.println("Mais finalement la couleur de ma voiture 1 est de couleur " + maVoiture1.couleur + " et elle dispose de " + maVoiture1.nbPortes + " portes");
+
+        //Sans lui affecter de valeur, la valeur de maVoiture2 est indéfinie. Sa valeur par défautn'est pas null
+        Voiture maVoiture2;
+
+        Voiture maVoiture3 = new Voiture();
+        System.out.println(maVoiture3.couleur);
+
+        if (maVoiture3.couleur == null){
+            System.out.println("La couleur de ma voiture 3 est null");
+        }
+
+        //On peut utiliser null pour supprimer la valeur actuelle d'une variable de type Objet
+
+        maVoiture1.couleur = null;
+        System.out.println(maVoiture1.couleur);
     }
 }
