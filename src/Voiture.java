@@ -37,4 +37,18 @@ public class Voiture {
       return rapportCourant;
    }
 
+   //On ne peut retourner qu'une seule valeur d'un seul type,
+   //Mais une méthode peut avoir plusieurs paramètres
+
+   void tournerOrientation (boolean droite, int angle){
+      String droiteOuGauche = null;
+      if (droite){
+         droiteOuGauche = "droite";
+      }
+      else{
+         droiteOuGauche = "gauche";
+      }
+      System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
+   }
+
 }
