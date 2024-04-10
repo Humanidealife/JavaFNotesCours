@@ -50,5 +50,11 @@ public class Voiture {
       }
       System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
    }
+   // Ou comme cela
+   /*
+    void tournerOrientation (String droiteOuGauche, int angle){
+      System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
+   }
+    */
 
 }
