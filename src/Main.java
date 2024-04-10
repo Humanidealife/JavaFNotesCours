@@ -159,5 +159,17 @@ public class Main {
         System.out.println(maVoiture1.couleur);
         //En écrivant ceci, on exécute toutes les instructions qui se trouvent dans la méthode "klaxonner".
         maVoiture1.klaxonner();
+
+        maVoiture1.accelerer();
+        // et si je mets comme ci-dessous, j'afficherai alors la valeur retournée de la méthode "accelerer"
+        System.out.println("la nouvelle vitesse après l'accélérarion est " + maVoiture1.accelerer()+ "km/h");
+
+        // On peut également conserver le résultat dans une variable
+        int nouvelleVitesse = maVoiture1.accelerer();
+        System.out.println(nouvelleVitesse);
+
+        int nouveauRapport = maVoiture1.passerRapport(true);
+        System.out.println(nouveauRapport);
+        System.out.println(maVoiture1.rapportCourant);
     }
 }
