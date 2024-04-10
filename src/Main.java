@@ -157,5 +157,7 @@ public class Main {
 
         maVoiture1.couleur = null;
         System.out.println(maVoiture1.couleur);
+        //En écrivant ceci, on exécute toutes les instructions qui se trouvent dans la méthode "klaxonner".
+        maVoiture1.klaxonner();
     }
 }
