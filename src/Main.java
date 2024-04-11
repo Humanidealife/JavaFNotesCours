@@ -174,5 +174,57 @@ public class Main {
 
         maVoiture1.tournerOrientation(true, 10);
         maVoiture3.tournerOrientation(false, 30);
+
+        Voiture maVoiture4 = new Voiture();
+        Voiture maVoiture5 = new Voiture();
+        //Si l'on veut comparer les deux variables maVoiture4 et maVoiture5 avec l'opérateur "=="
+        boolean egaleOuNon = maVoiture4 == maVoiture5;
+        //Il s'agit de comparer les emplacements des deux objets qui se trouvent dans chacune des varaibles, les emplacements dans la mémoire
+        //Ces emplacements sont différents
+        //Le résultat est false
+        System.out.println(egaleOuNon);
+
+        //Les String, en toute logique, devraient suivre exactement la même règle
+        String chaine1 = "Le ciel est bleu";
+        String chaine2 = "Le ciel est bleu";
+        //Etant donné il s'agit de deux objets, il devrait être à deux emplacements différents dans la mémoire
+        //Puis le résultat de leur comparaison devrait retourner false
+        boolean comparaisonStrings = chaine1 == chaine2;
+        //Mais le résultat est en réalité true.
+        //Parce que quand on affecte la valeur à un String, contrairement à n'importe quel objet, jusqu'ici,
+        //on n'a pas instancier le String en faisant appel explicitement au mot clé "new".
+        //Tout cela est une spécificité de String
+        //On peut construire un String en passant directement la valeur du String sans faire appel explicitement au mot clé "new"
+        //c'est-à-dire : sans construire l'objet explicitement
+        //Quand on construit le String de cette manière-là, afin d'optimiser les performences
+        //Java va stocker en mémoire le String à un seul emplacement bien particulier
+        //Et à chaque fois que l'on construit de la même manière un autre String en affectant exactement la même valeur
+        //Java va réutiliser le même objet
+        //Il s'agit donc du même emplacement de mémoire
+        System.out.println(comparaisonStrings);
+
+        //On peut également construire un String comme n'importe quel objet
+        //En faisant appel au mot clé "new"
+        //On peut passer quelque chose en paramètre
+        String chaine3 = new String("Le ciel est bleu");
+        String chaine4 = new String("Le ciel est bleu");
+        boolean comparaisonString23 = chaine2 == chaine3;
+        boolean comparaisonString34 = chaine3 == chaine4;
+        System.out.println(comparaisonString23);
+        System.out.println(comparaisonString34);
+
+        //Comme on ne peut pas garantir que le signe "==" nous renvoie "true" pour deux String que l'on considère identiques
+        //On va donc comparer les String en utilisant une méthode : "equals"
+        //Cette méthode "equals" est utilisable quelque soit l'objet
+        //Avec la méthode "equals", on vérifie si sémentiquement ces deux String peuvent être considérés égaux
+        //"equals" va comparer les deux String caracères par caractère
+        boolean comparaisonStringEquals = chaine3.equals(chaine4);
+        System.out.println(comparaisonStringEquals);
+        //Mais on peut employer la méthode, qui est spécifiquement à String, "equalsIgnoreCase"
+        String chaine5 = new String("LE CIEL EST BLEU");
+        boolean comparaisonSens = chaine4.equalsIgnoreCase(chaine5);
+        System.out.println(comparaisonSens);
+
+
     }
 }
