@@ -230,5 +230,30 @@ public class Main {
 
         maVoiture1.accelerer(70);
         System.out.println(maVoiture1.vitesse);
+
+        Voiture maVoiture6 = new Voiture();
+        maVoiture6.nbPortes = 5;
+        //Pour qu'une voiture bénéficie d'un moteur, il faut également instancier la classe Moteur pour obtenir un objet de type Moteur
+        Moteur moteur6 = new Moteur();
+        moteur6.carburation = "Diesel";
+        moteur6.nbCylindres = 6;
+        //ce moteur6 que l'on vient de créer, il faut l'affectuer à la propriété moteur de maVoiture6
+        maVoiture6.moteur = moteur6;
+
+        System.out.println("Le nombre de cylindres de la voiture6 est de " + maVoiture6.moteur.nbCylindres);
+
+        //On travaille ici avec la référence du moteur6
+        //Ici il ne s'agit en aucun cas de clôner ou de dupliquer le moteur de la maVoiture6 pour en faire le moteur de maVoiture1
+        //Il s'agit simplement de copier la référence à ce moteur6, et donc d'indiquer que l'emplacement dans la mémoire où se trouve le moteur6
+        //  de maVoiture6 et maVoiture1 est le même.
+        //On parle ici de copie par référence (par opposition à la copie par valeur -> ce qui est utilisée pour les types primitifs)
+
+        maVoiture1.moteur = moteur6;
+        //Comment dissocier un moteur à une voiture ?
+        //Il suffit de valoriser la prorpiété moteur de la Voiture en "null"
+        //Mais le motuer6 existe toujours en part entière, il n'est seulement plus associé à la maVoiture6
+        maVoiture6.moteur = null;
+
+        //Mais si l'on approte une modification au moteur6, cette modification sera visible pour toutes les voitures qui le possèdent
     }
 }

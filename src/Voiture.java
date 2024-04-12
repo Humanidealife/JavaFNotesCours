@@ -2,10 +2,21 @@ public class Voiture {
    int nbPortes = 5;
    boolean automatique;
    // la propriété couleur bénéficie d'une valeur par défaut, qui est null.
+   //String n'est pas un type primitif, String est un type objet, c'est une classe
+   //Cette classe qui représente une chaîne de caractères bénéficie de propriétés
+   //  dont une est la séquence des caractères qui compose la chaîne de caractères
    String couleur;
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    int rapportCourant;
    int vitesse = 20;
+   //La classe Voiture n'a plus de propriétés comme carburation et nbCylindres
+   //Mais comme on veux à partir de la Voiture avoir accès à ces informations
+   //On va donc rajouter une nouvelle propriété : qui se nomme "moteur" et de type "Moteur"
+   //Voici une nouvelle propriété qui va aussi caractériser la Voiture : moteur
+   //On a encapsulé les deux propriétés : "carburation" et "nbCylindres" dans une nouvelle classe : class Moteur
+   //Ce concept d'encapsulation est fondamental dans les langages d'objet
+   //La valeur par défaut des prorpiétés de type Objet est : "null"
+   Moteur moteur;
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
