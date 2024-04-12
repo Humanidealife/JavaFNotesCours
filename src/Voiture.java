@@ -5,7 +5,7 @@ public class Voiture {
    String couleur;
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    int rapportCourant;
-   int vitesseCourante;
+   int vitesse = 20;
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
@@ -24,9 +24,21 @@ public class Voiture {
       return 100;
    }
    //Surcharge dela méthode accelerer
-   int accelerer(int vitesseEnPlus){
+   //Ici cette méthode reçoit un paramètre, un int vitesseEnPlus, qui correspond à la vitesse en plus que l'on souhaitait ajouter
+   //à ma vitesse courante
+   //cette méthode retourne un int, qui est la vitesse finale atteinte suite à cette accélération
+   //qui est donc le résultat de "vitesse + vitesseEnPlus"
+
+   //Mais lorsque le paramètre reçu dans la méthode a le même nom que la propriété de l'objet que l'on manipule
+   //C'est le paramètre de la méthode qui a la priorité
+   //Quand le paramètre qui a exactement le même nom que l'attibut de la classe, on doit écrire
+   int accelerer(int vitesse){
       System.out.println("J'accélère");
-      return vitesseCourante + vitesseEnPlus;
+      //this.vitesse est la propriété de l'objet
+      this.vitesse += vitesse;
+      return this.vitesse;
+      // acienne version
+      // return vitesse + vitesseEnPlus;
    }
 
 
@@ -34,9 +46,17 @@ public class Voiture {
    //Mais cette méthode est possiblement être paramètrée lors de son invocation
    //Il faut donc mettre dans les paraenthèses les différents paramètres que l'on peut valoriser lors de son invocation
    //Il faut connaître le rapport courant de la voiture
+   //this : dans la méthode passerRapport de la classe Voiture, c'est le rapportCourant de la maVoiture4 qui est incrémenté de 1
+   //parce que c'est la méthode passerRapport de maVoiture4 qui a été invoquée
+   //jusque là le mot clé "this" n'a pas été utilisé pour indiquer que dans la méthode on veut manipuler l'objet courant
+   //mais il est tout à fait autorisé de le faire.
    int passerRapport(boolean augmenter){
       if (augmenter){
-         rapportCourant++;
+         //cela signifie le rapportCourant de l'objet actuellement manipulé pendnat l'exécution
+         //"tihis" est implicite
+         //Ici on ajoute "this" ou pas, cela revient au même
+         //MAIS DANS LA PLUPART DES CAS ON UTILISE "this" POUR LEVER UNE AMBIGUITE
+         this.rapportCourant++;
       }
       else{
          rapportCourant --;

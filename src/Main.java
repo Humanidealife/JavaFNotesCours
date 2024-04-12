@@ -225,6 +225,10 @@ public class Main {
         boolean comparaisonSens = chaine4.equalsIgnoreCase(chaine5);
         System.out.println(comparaisonSens);
 
+        //L'objet qui va être manipulé dans la méthode "passerRapport" sera "maVoiture4".
+        maVoiture4.passerRapport(true);
 
+        maVoiture1.accelerer(70);
+        System.out.println(maVoiture1.vitesse);
     }
 }
