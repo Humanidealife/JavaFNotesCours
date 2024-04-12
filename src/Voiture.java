@@ -5,6 +5,7 @@ public class Voiture {
    String couleur;
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    int rapportCourant;
+   int vitesseCourante;
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
@@ -22,6 +23,12 @@ public class Voiture {
       //Pour retourner un résultat à la fin de l'opération, à la fin de la méthode -> return; suivi du résultat retourné
       return 100;
    }
+   //Surcharge dela méthode accelerer
+   int accelerer(int vitesseEnPlus){
+      System.out.println("J'accélère");
+      return vitesseCourante + vitesseEnPlus;
+   }
+
 
    //La voiture peut passer un rapport
    //Mais cette méthode est possiblement être paramètrée lors de son invocation
@@ -40,6 +47,8 @@ public class Voiture {
    //On ne peut retourner qu'une seule valeur d'un seul type,
    //Mais une méthode peut avoir plusieurs paramètres
 
+   //Surchage de méthode
+   //La méthode tournerOrientation au-dessus est surchargée par laméthode tournerOrientation en-dessous
    void tournerOrientation (boolean droite, int angle){
       String droiteOuGauche = null;
       if (droite){
@@ -51,10 +60,10 @@ public class Voiture {
       System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
    }
    // Ou comme cela
-   /*
+
     void tournerOrientation (String droiteOuGauche, int angle){
       System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
    }
-    */
+
 
 }
