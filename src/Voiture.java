@@ -1,4 +1,13 @@
 public class Voiture {
+   //La prorpriété nbRoues est une valeur commune à toutes les instances
+   //nbRoues est donc static
+   //Une propriété statique ou un attribut statique est une propriété dont la valeur est définie par la classe
+   //On l'appelle également une variable de classe
+   //variable de classe, le contenu est commun à toutes les instances
+   //variable d'instance, le contenu peut différer en fonction des objets
+   //Désormais toutes les voitures instanciées vont avoir 4 roues
+   static int nbRoues = 4;
+
    int nbPortes = 5;
    boolean automatique;
    // la propriété couleur bénéficie d'une valeur par défaut, qui est null.

@@ -267,6 +267,18 @@ public class Main {
         Ville villeDArrivee1 = maVoiture1.transporter(passager1,villeDeDepart1);
         System.out.println("Le passager est arrivé dans la ville de " + villeDArrivee1.nom + " " + villeDArrivee1.pays);
 
+        //Comme il s'agit d'une prorpiété statique, il est en réalité pas nécessaire de disposer d'une instance, d'un objet
+        // pour savoir de combien de routes dispose une voiture
+        System.out.println(maVoiture1.nbRoues);
+        //On peut simplement faire
+        System.out.println("Une voiture en général a " + Voiture.nbRoues + " roues");
+        //Des propriétés ou attributs statiques peuvent aussi être changés de valeur
+        //On peut modifier le nombre de roues des voitures en général
+        Voiture.nbRoues = 5;
+        System.out.println("Une voiture en général a " + Voiture.nbRoues + " roues");
+
+
+
     }
 
 }
