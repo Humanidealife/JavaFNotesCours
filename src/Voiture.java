@@ -96,5 +96,11 @@ public class Voiture {
       System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
    }
 
+   //void signifie que cette méthode ne retourne rien
+   //"Passager" est le type du paramètre ou argument, et cette classe va être créée
+   //"passager" est le nom de cet argument
+   void transporter (Passager passager){
+      System.out.println("Je transporte un passager");
+   }
 
 }
