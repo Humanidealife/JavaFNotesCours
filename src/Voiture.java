@@ -99,8 +99,9 @@ public class Voiture {
    //void signifie que cette méthode ne retourne rien
    //"Passager" est le type du paramètre ou argument, et cette classe va être créée
    //"passager" est le nom de cet argument
-   void transporter (Passager passager){
-      System.out.println("Je transporte un passager");
+   void transporter (Passager passager, Ville villeDeDepart){
+      System.out.println("Je transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
+      System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
    }
 
 }

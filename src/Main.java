@@ -255,5 +255,16 @@ public class Main {
         maVoiture6.moteur = null;
 
         //Mais si l'on approte une modification au moteur6, cette modification sera visible pour toutes les voitures qui le possèdent
+
+        Passager passager1 = new Passager();
+        passager1.nom = "AUBOIS";
+        passager1.prenom = "Anatole";
+        Ville villeDeDepart1 = new Ville();
+        villeDeDepart1.nom = "Le Mans";
+        villeDeDepart1.pays = "France";
+        //On donne donc en paramètre de cette méthode un objet (passager1) de type Passager
+        maVoiture1.transporter(passager1,villeDeDepart1);
+
     }
+
 }
