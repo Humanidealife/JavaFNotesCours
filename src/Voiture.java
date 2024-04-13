@@ -99,9 +99,17 @@ public class Voiture {
    //void signifie que cette méthode ne retourne rien
    //"Passager" est le type du paramètre ou argument, et cette classe va être créée
    //"passager" est le nom de cet argument
-   void transporter (Passager passager, Ville villeDeDepart){
+   Ville transporter (Passager passager, Ville villeDeDepart){
       System.out.println("Je transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
       System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
+
+      //retour de la villeDArrivee
+      //Il faut d'abord instancier une ville
+      Ville villeDArrivee = new Ville();
+      villeDArrivee.nom ="Rennes";
+      villeDArrivee.pays = "France";
+      //Le type du résultat que l'on fournit en retour doit être déclaré en début de la méthode
+      return villeDArrivee;
    }
 
 }

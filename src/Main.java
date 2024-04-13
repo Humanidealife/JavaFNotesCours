@@ -263,7 +263,9 @@ public class Main {
         villeDeDepart1.nom = "Le Mans";
         villeDeDepart1.pays = "France";
         //On donne donc en paramètre de cette méthode un objet (passager1) de type Passager
-        maVoiture1.transporter(passager1,villeDeDepart1);
+        //On peut récupérer ce retour ici en le stockant dans une variable du même type que le résultat retourné
+        Ville villeDArrivee1 = maVoiture1.transporter(passager1,villeDeDepart1);
+        System.out.println("Le passager est arrivé dans la ville de " + villeDArrivee1.nom + " " + villeDArrivee1.pays);
 
     }
 
