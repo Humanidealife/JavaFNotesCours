@@ -277,7 +277,10 @@ public class Main {
         Voiture.nbRoues = 5;
         System.out.println("Une voiture en général a " + Voiture.nbRoues + " roues");
 
+        Voiture.klaxonner();
 
+        Voiture.tournerOrientation(false, 30);
+        Voiture.tournerOrientation("droite", 56);
 
     }
 

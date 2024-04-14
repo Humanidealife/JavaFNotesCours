@@ -30,7 +30,11 @@ public class Voiture {
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
    //dans ce cas-là, il faut préfixer le nom de méthode par "void"(vide). Cela indique que la méthode ne retourne aucun résultat
-   void klaxonner(){
+   //Cette méthode peut être qualifiée de static, poarce que cette méthode se comporte de la même manière quelle que soit la voiture
+   //Cette méthode ne dépend pas des spécificités de l'objet en particulier
+   //Avec le mot clé "static" cette méthode peut être invoquée sans avoir besoin d'une instance particulière, tout comme pour
+   // les prorpriétés statiques : NomDeLaClasse.nomDeLaMetode
+   static void klaxonner(){
       System.out.println("Tutut!");
    }
 
@@ -70,6 +74,9 @@ public class Voiture {
    //parce que c'est la méthode passerRapport de maVoiture4 qui a été invoquée
    //jusque là le mot clé "this" n'a pas été utilisé pour indiquer que dans la méthode on veut manipuler l'objet courant
    //mais il est tout à fait autorisé de le faire.
+   //Cette méthode est une méthode d'instance, parce qu'elle implique l'attribut "rapportCourant"
+   //Cet attribut "rapportCourant" de l'objet particulier est manipulé.
+   //Cette méthode nécessite d'être invoquée à partir d'une Voiture en particulier
    int passerRapport(boolean augmenter){
       if (augmenter){
          //cela signifie le rapportCourant de l'objet actuellement manipulé pendnat l'exécution
@@ -89,7 +96,9 @@ public class Voiture {
 
    //Surchage de méthode
    //La méthode tournerOrientation au-dessus est surchargée par laméthode tournerOrientation en-dessous
-   void tournerOrientation (boolean droite, int angle){
+   //Cette méthode est aussi statique, le comportement de cette méthode n'implique aucun atttribut d'instatnce
+   //Cette méthode ne fait que manipuler les paramètres d'entrée
+   static void tournerOrientation (boolean droite, int angle){
       String droiteOuGauche = null;
       if (droite){
          droiteOuGauche = "droite";
@@ -97,12 +106,12 @@ public class Voiture {
       else{
          droiteOuGauche = "gauche";
       }
-      System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
+      System.out.println("Les " + nbRoues + " roues de la voiture vont tourner à " + droiteOuGauche +" d'un angle de " + angle + "°");
    }
    // Ou comme cela
 
-    void tournerOrientation (String droiteOuGauche, int angle){
-      System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle);
+    static void tournerOrientation (String droiteOuGauche, int angle){
+      System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle + "°");
    }
 
    //void signifie que cette méthode ne retourne rien
