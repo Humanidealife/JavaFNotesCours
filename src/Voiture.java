@@ -53,16 +53,26 @@ public class Voiture {
    //Attention : On ne peut pas ajouter deux constructeurs qui disposent exactement la même nature de paramètres
 
    //Mais rien ne nous empêche de créer des constructeurs qui disposent de plusieurs paramètres
-   Voiture(String couleur, int nbPortes){
+
+   /*Voiture(String couleur, int nbPortes){
       this.couleur = couleur;
       this.nbPortes = nbPortes;
       System.out.println("Cette voiture est construite avec la couleur et le nombre de portes comme paramètres");
-   }
+   }*/
 
    //On peut ajouter également (dans une classe) un constructeur qui prend en paramètre un type complexe, par exemple une classe comme paramètre
    Voiture(Moteur moteur){
       this.moteur = moteur;
       System.out.println("Cette voiture est construite avec moteur comme paramètre");
+   }
+
+   //On peut construire une voiture en recevant en paramètre les constituants du moteur
+   Voiture(String carburation, int nbCylindres){
+      //Puis on profite de la construction de la voiture pour instancier son moteur
+      Moteur moteur = new Moteur();
+      moteur.carburation = carburation;
+      moteur.nbCylindres = nbCylindres;
+      this.moteur = moteur;
    }
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
