@@ -59,7 +59,11 @@ public class Voiture {
       System.out.println("Cette voiture est construite avec la couleur et le nombre de portes comme paramètres");
    }
 
-
+   //On peut ajouter également (dans une classe) un constructeur qui prend en paramètre un type complexe, par exemple une classe comme paramètre
+   Voiture(Moteur moteur){
+      this.moteur = moteur;
+      System.out.println("Cette voiture est construite avec moteur comme paramètre");
+   }
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
