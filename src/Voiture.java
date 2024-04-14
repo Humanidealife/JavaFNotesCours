@@ -27,6 +27,11 @@ public class Voiture {
    //La valeur par défaut des prorpiétés de type Objet est : "null"
    Moteur moteur;
 
+   //Un constructeur est un bloc d’instructions qui se trouve dans la classe instanciée et il est écrit comme ci-dessous :
+   Voiture (){
+      System.out.println("Une voiture est en cours de construction");
+   }
+
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
    //dans ce cas-là, il faut préfixer le nom de méthode par "void"(vide). Cela indique que la méthode ne retourne aucun résultat
