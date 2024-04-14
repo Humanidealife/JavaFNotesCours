@@ -1,4 +1,15 @@
 public class Voiture {
+   //Convention d’écriture
+   /*
+   1. Attributs statiques
+   2. Attributs d’instances
+   3. Constructeurs (ordonnés par leur nombre de paramètres)
+   4. Méthodes (
+               1. méthodes statiques
+               2. méthodes d’instances)
+    */
+
+
    //La prorpriété nbRoues est une valeur commune à toutes les instances
    //nbRoues est donc static
    //Une propriété statique ou un attribut statique est une propriété dont la valeur est définie par la classe
@@ -74,6 +85,8 @@ public class Voiture {
       moteur.nbCylindres = nbCylindres;
       this.moteur = moteur;
    }
+
+
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat
