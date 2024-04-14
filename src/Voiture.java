@@ -15,6 +15,7 @@ public class Voiture {
    //Cette classe qui représente une chaîne de caractères bénéficie de propriétés
    //  dont une est la séquence des caractères qui compose la chaîne de caractères
    String couleur;
+
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    int rapportCourant;
    int vitesse = 20;
@@ -28,9 +29,28 @@ public class Voiture {
    Moteur moteur;
 
    //Un constructeur est un bloc d’instructions qui se trouve dans la classe instanciée et il est écrit comme ci-dessous :
-   Voiture (){
-      System.out.println("Une voiture est en cours de construction");
+   //On rajoute un paramètre dans le constructeur
+   Voiture (String couleur){
+      //Dans le bloc d'instructions on va profiter de la construction pour associer à l'objet, en cours de création,
+      // la nouvelle courleur passée en paramètre en employant le mot clé "this" -> objet courant
+      //Le premier mot couleur est "la couleur de l'objet courant"
+      //Le deuxième mot couleur est "la couleur passée en paramètre"
+      this.couleur = couleur;
+      System.out.println("Une voiture est construite avec la couleur comme paramètre, sa couleur est " + couleur);
+      //Attention, le fait de définir un constructeur avec paramètre va faire disparaître le constructeur par défaut -> constructeur sans paramètre
+      //Il n'est donc plus impossible d'instancier la classe sans passer le paramètre couleur maintenant
    }
+
+   //Pour que l'on puisse continuer à utiliser un constructeur sans paramètre, il fuat l'ajouter expliciement à nouveau dans la classe
+   Voiture(){
+      System.out.println("Une voiture est construite sans paramètre");
+   }
+   //On a maintenant donc deux constructeurs dans la classe voiture, et libre aux développeurs de choisir le constructeur le plus
+   //  adapté à chaque utilisation
+   //Attention : Rajouter un constructeur paramétré dans une classe, c'est également indiquer aux développeurs que ce paramètre est essentiel ou
+   //  du moins d'une grande utilité.
+
+
 
    //Nous devons indiquer si cette opération est susceptible de retourner un résultat ou pas.
    //Ici l'oprération "klaxonner" ne retourne aucun résultat

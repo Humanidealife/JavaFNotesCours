@@ -282,6 +282,8 @@ public class Main {
         Voiture.tournerOrientation(false, 30);
         Voiture.tournerOrientation("droite", 56);
 
+        Voiture maVoiture7 = new Voiture("violet");
+
     }
 
 }
