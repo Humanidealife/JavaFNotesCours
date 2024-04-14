@@ -49,6 +49,15 @@ public class Voiture {
    //  adapté à chaque utilisation
    //Attention : Rajouter un constructeur paramétré dans une classe, c'est également indiquer aux développeurs que ce paramètre est essentiel ou
    //  du moins d'une grande utilité.
+   //On peut ajouter autant de constructeurs que l'on souhaite
+   //Attention : On ne peut pas ajouter deux constructeurs qui disposent exactement la même nature de paramètres
+
+   //Mais rien ne nous empêche de créer des constructeurs qui disposent de plusieurs paramètres
+   Voiture(String couleur, int nbPortes){
+      this.couleur = couleur;
+      this.nbPortes = nbPortes;
+      System.out.println("Cette voiture est construite avec la couleur et le nombre de portes comme paramètres");
+   }
 
 
 

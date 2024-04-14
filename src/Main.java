@@ -284,6 +284,8 @@ public class Main {
 
         Voiture maVoiture7 = new Voiture("violet");
 
+        Voiture maVoiture8 = new Voiture("Jaune", 4);
+
     }
 
 }
