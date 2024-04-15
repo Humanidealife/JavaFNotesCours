@@ -160,13 +160,17 @@ public class Main {
         //En écrivant ceci, on exécute toutes les instructions qui se trouvent dans la méthode "klaxonner".
         maVoiture1.klaxonner();
 
+        /*
         maVoiture1.accelerer();
+
         // et si je mets comme ci-dessous, j'afficherai alors la valeur retournée de la méthode "accelerer"
-        System.out.println("la nouvelle vitesse après l'accélérarion est " + maVoiture1.accelerer()+ "km/h");
+        System.out.println("la nouvelle vitesse après l'accélérarion est " + maVoiture1.accelerer()+ "km/h");  */
 
         // On peut également conserver le résultat dans une variable
+        /*
         int nouvelleVitesse = maVoiture1.accelerer();
         System.out.println(nouvelleVitesse);
+        */
 
         int nouveauRapport = maVoiture1.passerRapport(true);
         System.out.println(nouveauRapport);
@@ -282,9 +286,14 @@ public class Main {
         Voiture.tournerOrientation(false, 30);
         Voiture.tournerOrientation("droite", 56);
 
-        Voiture maVoiture7 = new Voiture("violet");
+        Voiture maVoiture7 = new Voiture("violete");
 
         Voiture maVoiture8 = new Voiture("Jaune", 4);
+
+        //On peut également faire comme ci-dessous
+        //La variable pourrait être de type VehiculeMotorise
+        //maVoiture9 a plusieurs formes, ce que l'on appelle le polymorphisme
+        VehiculeMotorise maVoiture9 = new Voiture();
 
     }
 

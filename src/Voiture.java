@@ -1,4 +1,4 @@
-public class Voiture {
+public class Voiture extends VehiculeMotorise{
    //Convention d’écriture
    /*
    1. Attributs statiques
@@ -29,7 +29,7 @@ public class Voiture {
 
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    int rapportCourant;
-   int vitesse = 20;
+
    //La classe Voiture n'a plus de propriétés comme carburation et nbCylindres
    //Mais comme on veux à partir de la Voiture avoir accès à ces informations
    //On va donc rajouter une nouvelle propriété : qui se nomme "moteur" et de type "Moteur"
@@ -37,7 +37,6 @@ public class Voiture {
    //On a encapsulé les deux propriétés : "carburation" et "nbCylindres" dans une nouvelle classe : class Moteur
    //Ce concept d'encapsulation est fondamental dans les langages d'objet
    //La valeur par défaut des prorpiétés de type Objet est : "null"
-   Moteur moteur;
 
    //Un constructeur est un bloc d’instructions qui se trouve dans la classe instanciée et il est écrit comme ci-dessous :
    //On rajoute un paramètre dans le constructeur
@@ -99,7 +98,7 @@ public class Voiture {
       System.out.println("Tutut!");
    }
 
-   int accelerer(){
+   /*int accelerer(){
       System.out.println("J'accélère");
       //Nouvelle instruction : le code qui va invoquer cette méthode, voudra savoir également à l'issue de l'accélération
       //quelle est la nouvelle vitesse atteinte par la voiture
@@ -107,7 +106,8 @@ public class Voiture {
       //Il faut donc indique devant le nom de la méthode, le type du résultat retourné -> int
       //Pour retourner un résultat à la fin de l'opération, à la fin de la méthode -> return; suivi du résultat retourné
       return 100;
-   }
+   }*/
+
    //Surcharge dela méthode accelerer
    //Ici cette méthode reçoit un paramètre, un int vitesseEnPlus, qui correspond à la vitesse en plus que l'on souhaitait ajouter
    //à ma vitesse courante
@@ -117,14 +117,7 @@ public class Voiture {
    //Mais lorsque le paramètre reçu dans la méthode a le même nom que la propriété de l'objet que l'on manipule
    //C'est le paramètre de la méthode qui a la priorité
    //Quand le paramètre qui a exactement le même nom que l'attibut de la classe, on doit écrire
-   int accelerer(int vitesse){
-      System.out.println("J'accélère");
-      //this.vitesse est la propriété de l'objet
-      this.vitesse += vitesse;
-      return this.vitesse;
-      // acienne version
-      // return vitesse + vitesseEnPlus;
-   }
+
 
 
    //La voiture peut passer un rapport
@@ -175,11 +168,11 @@ public class Voiture {
       System.out.println("La voiture va tourner à " + droiteOuGauche +" d'un angle de " + angle + "°");
    }
 
-   //void signifie que cette méthode ne retourne rien
-   //"Passager" est le type du paramètre ou argument, et cette classe va être créée
-   //"passager" est le nom de cet argument
+
    Ville transporter (Passager passager, Ville villeDeDepart){
-      System.out.println("Je transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
+      //Si une méthode de cette classe VehiculeMotorise ne convient pas à la classe Voiture
+      //Dans ce cas-là on a tout à fiat le droit de réécrire la méthode concernée dans la classe fille
+      System.out.println("La voiture transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
       System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
 
       //retour de la villeDArrivee
