@@ -294,7 +294,6 @@ public class Main {
         //La variable pourrait être de type VehiculeMotorise
         //maVoiture9 a plusieurs formes, ce que l'on appelle le polymorphisme
         VehiculeMotorise maVoiture9 = new Voiture();
-
     }
 
 }
