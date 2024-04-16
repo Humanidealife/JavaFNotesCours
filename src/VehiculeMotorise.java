@@ -29,6 +29,13 @@ public class VehiculeMotorise {
         //Le type du résultat que l'on fournit en retour doit être déclaré en début de la méthode
         return villeDArrivee;
     }
+    /*VehiculeMotorise(){
 
+    }*/
 
+    //On peut ajouter également (dans une classe) un constructeur qui prend en paramètre un type complexe, par exemple une classe comme paramètre
+    VehiculeMotorise(Moteur moteur){
+        this.moteur = moteur;
+        System.out.println("Cette voiture est construite avec moteur comme paramètre");
+    }
 }

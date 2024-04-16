@@ -311,6 +311,11 @@ public class Main {
         //Mais si l'on ne veut pas créer une varaible supplémentaire, on peut transtyper la variable directement en écrivant
         //C'est un transtypage à la volée
         ((Voiture)maVoiture9).automatique = true;
+
+
+        Moteur moteur10 = new Moteur();
+        Voiture maVoiture10 = new Voiture(moteur10);
+
     }
 
 }

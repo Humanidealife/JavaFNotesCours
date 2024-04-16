@@ -41,6 +41,12 @@ public class Voiture extends VehiculeMotorise{
    //Un constructeur est un bloc d’instructions qui se trouve dans la classe instanciée et il est écrit comme ci-dessous :
    //On rajoute un paramètre dans le constructeur
    Voiture (String couleur){
+      //Avec "super(new Moteur())", on est obligé d'écrire ainsi
+      //Parce que maintenant il est impossible de construire une Voiture avec simplement la couleur, car le Parent
+      //  nécessite de bénéficier d'un moteur
+      //super(new Moteur());
+      this();
+
       //Dans le bloc d'instructions on va profiter de la construction pour associer à l'objet, en cours de création,
       // la nouvelle courleur passée en paramètre en employant le mot clé "this" -> objet courant
       //Le premier mot couleur est "la couleur de l'objet courant"
@@ -53,7 +59,10 @@ public class Voiture extends VehiculeMotorise{
 
    //Pour que l'on puisse continuer à utiliser un constructeur sans paramètre, il fuat l'ajouter expliciement à nouveau dans la classe
    Voiture(){
-      System.out.println("Une voiture est construite sans paramètre");
+      //On peut ajouter des paramtères dans le parenthèses de "super"
+      //Cela construit la voiture en utilisant tout d'abord le constructeur du Parent qui prend en paramètre un moteur
+      //C'est ailleur ce que l'on serait obligé de faire si l'on avait considéré qu'un VehiculeMotorise ne pouvait jamais être construit sans moteur
+     super(new Moteur());
    }
    //On a maintenant donc deux constructeurs dans la classe voiture, et libre aux développeurs de choisir le constructeur le plus
    //  adapté à chaque utilisation
@@ -70,14 +79,19 @@ public class Voiture extends VehiculeMotorise{
       System.out.println("Cette voiture est construite avec la couleur et le nombre de portes comme paramètres");
    }*/
 
-   //On peut ajouter également (dans une classe) un constructeur qui prend en paramètre un type complexe, par exemple une classe comme paramètre
+   //"super" nous permet, lors de l'exécution, de faire référence à la classe Parente, notamment pour en invoquer un constructeur
    Voiture(Moteur moteur){
-      this.moteur = moteur;
-      System.out.println("Cette voiture est construite avec moteur comme paramètre");
+      //Ici on invoque le constructeur de VehiculeMotorise qui prend en paramètre le moteur
+      super(moteur);
    }
 
    //On peut construire une voiture en recevant en paramètre les constituants du moteur
    Voiture(String carburation, int nbCylindres){
+
+      //super(new Moteur());
+      //OU c'est encore mieur de faire comme ci-dessous
+      this();
+
       //Puis on profite de la construction de la voiture pour instancier son moteur
       Moteur moteur = new Moteur();
       moteur.carburation = carburation;
