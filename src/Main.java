@@ -293,7 +293,24 @@ public class Main {
         //On peut également faire comme ci-dessous
         //La variable pourrait être de type VehiculeMotorise
         //maVoiture9 a plusieurs formes, ce que l'on appelle le polymorphisme
+        //On construit un objet de type Voiture qui sera déposé dans la mémoire avec une adresse
+        //On localise cette adresse à travers d'une variable maVoiture9 sous le type VehiculeMotorise
+        //A partir de là, maVoiture9 est considérée comme un VehiculeMotorise, mais non-plus comme une Voiture
+        //  les proprétés spécifiquement liées à une Voiture sont inconnues pour maVoiture9
         VehiculeMotorise maVoiture9 = new Voiture();
+        //Il serait intéressant de pouvoir indiquer explicitement que maVoiture9 n'est pas qu'un VehiculeMotorise, elle est aussi une Voiture
+        //  lors de l'utilisation des propriétés spécifiques d'une Voiture
+        //Il y a deux manière de faire
+        //Soit créer une nouvelle variable, donner à cette variable en valeur de maVoiture9, mais avec un petit préfixe
+        //  dans ce préfixe on indique le type de la classe sous laquelle on veut considérer maVoiture9SousFormeVoiture.
+        //Avec cette façon, maVoiture9 va être transtypée en Voiture pour être associée à la variable maVoiture9SousFormeVoiture,
+        //  à partir de là, on peut utiliser maVoiture9SousFormeVoiture à chaque fois que l'on a besoin accéder à une propriété ou à une méthode
+        //  spécifique à la classe Voiture
+        /*Voiture maVoiture9SousFormeVoiture = (Voiture)maVoiture9;*/
+
+        //Mais si l'on ne veut pas créer une varaible supplémentaire, on peut transtyper la variable directement en écrivant
+        //C'est un transtypage à la volée
+        ((Voiture)maVoiture9).automatique = true;
     }
 
 }
