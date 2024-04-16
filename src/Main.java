@@ -316,6 +316,12 @@ public class Main {
         Moteur moteur10 = new Moteur();
         Voiture maVoiture10 = new Voiture(moteur10);
 
+        //On peut obtenir un VehiculeMotorise en utlisant l'UsineDAssemblage
+        UsineDAssemblage uda = new UsineDAssemblage();
+
+        //UsineDAssemblage ne nous dit pas de quel type de VehiculeMotorise il s'agit.
+        VehiculeMotorise vm1 = uda.assembler();
+
     }
 
 }
