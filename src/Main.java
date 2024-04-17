@@ -322,6 +322,9 @@ public class Main {
         //UsineDAssemblage ne nous dit pas de quel type de VehiculeMotorise il s'agit.
         VehiculeMotorise vm1 = uda.assembler();
 
+
+        UsineDAssemblageVoiture udaVoiture = new UsineDAssemblageVoiture();
+        Voiture v1 = udaVoiture.assembler();
     }
 
 }
