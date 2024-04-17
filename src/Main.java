@@ -330,6 +330,14 @@ public class Main {
         bt1.masse = 200;
         Port p1 = new Port();
         p1.accueilDEngin(bt1);
+
+        Voiture peugeot206 = new Voiture();
+        //Mon Objet est toujours une Voiture, mais dans le code on considère que cet Voiture comme un VehiculeMotorise, ni plus ni moins
+        VehiculeMotorise peugeot307 = new Voiture();
+        //On peut également, grâce au fait que Voiture implémente l'Interface Vidangeable, considérer une Voiture sous forme d'Objet Vidangeable
+        //A ce moment là, bien sûr que la peugeot508 est ici, ne pourrait être que Vidangeable
+        //La seule chose à laquelle j'ai accès, c'est la méthode vidanger
+        Vidangeable peugeot508 = new Voiture();
     }
 
 }
