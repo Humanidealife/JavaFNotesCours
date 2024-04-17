@@ -325,6 +325,11 @@ public class Main {
 
         UsineDAssemblageVoiture udaVoiture = new UsineDAssemblageVoiture();
         Voiture v1 = udaVoiture.assembler();
+
+        Bateau bt1 = new Bateau();
+        bt1.masse = 200;
+        Port p1 = new Port();
+        p1.accueilDEngin(bt1);
     }
 
 }
