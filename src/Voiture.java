@@ -1,4 +1,4 @@
-public class Voiture extends VehiculeMotorise{
+public class Voiture extends VehiculeMotorise implements Vidangeable{
    //Convention d’écriture
    /*
    1. Attributs statiques
@@ -198,4 +198,10 @@ public class Voiture extends VehiculeMotorise{
       return villeDArrivee;
    }
 
+   //On doit définir le contenu pour la méthode "vidanger" implémentée
+   //implémentation "implements"
+   @Override
+   public void vidanger() {
+      System.out.println("Dévisser le bochon sous la culasse et attendre que cela coule");
+   }
 }
