@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -376,7 +378,20 @@ public class Main {
         //  passer en valeur le nom de cette variable recherchée
         System.out.println(System.getenv("Path"));
 
+        //Pour instancier "Scanner", il faut impérativement passer en paramètre du constructeur le canal ou le flux d'entrée
+        //  en l'occurence "System.in"
+        //L'entrée qui est scannée, peut être parcourue prograssivement à partir du début de multiples manières
+        Scanner sc = new Scanner(System.in);
 
+        //La plus simple étant de lire la prochaine ligne avec "nextLine"
+        //String ligneSuivante = sc.nextLine();
+        //System.out.println(ligneSuivante);
+
+        //Une autre méthode pratique "nextInt"
+        int entierSuivant = sc.nextInt();
+        System.out.println(entierSuivant);
+
+        //Il y a aussi la méthode "nextBoolean"
     }
 
 }
