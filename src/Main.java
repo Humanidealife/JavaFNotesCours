@@ -338,6 +338,45 @@ public class Main {
         //A ce moment là, bien sûr que la peugeot508 est ici, ne pourrait être que Vidangeable
         //La seule chose à laquelle j'ai accès, c'est la méthode vidanger
         Vidangeable peugeot508 = new Voiture();
+
+        //System.err.println("Erreur");
+        //Cette méthode statique "exit" reçoit en paramètre un "int" qui va définir le code de retour du programme présent,
+        // car "exit" va metrtre fin au programme présent, une fin normale ou anormale.
+        //  lorsque cette fin est considéérée normale, le "int" qui va être passer en paramètre est "0"
+
+        //Le code ci-dessous va metre fin à la machine virtuelle, avec une code qui signifie "tout s'est bien passé".
+
+        //Quand la valeur est différente de "0", par exemple "1" : par convention on considère que le programme s'est arrêté en erreur
+        //  avec un code erreur "1", il n'y a que le développeur seul qui sait la signification du code erreur "1"
+
+        //Une autre méthode statique intéressante du "System"
+        //Cette méthode au retour d'un "long", ce "long" représente le nombre de millisecondes écoulé depuis le 1 janvier 1970.
+        //  C'est une manière très simple de connaître précisément la date actuelle
+        long time = System.currentTimeMillis();
+        System.out.println(time);
+        //La plupart des machines sont capables de mesurer le temps de manière encore plus précise que des millisecondes
+        //  en allant jusqu'aux nanoseconde
+        //On va recevoir en retour des nanosecondes à partir d'une date arbitraire que l'on ne connaîssait pas
+        //On ne connaît pas la référence de départ, mais "nanoTime" nous permet d'analyser très finement des écarts de temps.
+        //Par exemple, combien de temps cela prend pour affichier "Hello"
+        long timeStart = System.nanoTime();
+        System.out.println("Hello");
+        long timeEnd = System.nanoTime();
+        System.out.println(timeEnd - timeStart);
+
+        //Cette méthode statique ci-dessous va nous retourer les propriétés du système hôte
+
+        System.out.println(System.getProperties());
+
+        //On peut également connaître les variables d'environnement associées à l'utilisteur et au système
+        // qui m'ont permis de démarrer mon programme
+        //"getenv" nous retoure l'intégralité de toutes les variables d'environnement connues
+        //  par exemple : la variable d'environnement "path"
+        //Si l'on cherche une variable d'environnement particulière, on peut dans "getenv()",
+        //  passer en valeur le nom de cette variable recherchée
+        System.out.println(System.getenv("Path"));
+
+
     }
 
 }
