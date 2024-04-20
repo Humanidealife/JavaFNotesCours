@@ -401,7 +401,14 @@ public class Main {
         //Si l'on veut explicitement donner une valeur à la propriété "rapportCourant"
         //Comme ceci toutes les caractéristiques de l'objet sont accessible
         //Par exemple la méthode ".equals()"
-        maVoiture6.rapportCourant = Integer.valueOf(4);
+        maVoiture6.rapportCourant = Integer.valueOf(4);//Mais cela n'est pas vraiment nécessaire avec l'auto-boxing
+        //On peut en réalité directement faire comme ci-dessous:
+        //rapportCourant contient bien un "Integer", un objet
+        maVoiture7.rapportCourant = 3;
+
+        //Avec auto-unboxing, on peut écrire directement
+        maVoiture7.rapportCourant++;
+
         System.out.println(maVoiture6.rapportCourant);
     }
 
