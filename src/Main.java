@@ -174,9 +174,9 @@ public class Main {
         System.out.println(nouvelleVitesse);
         */
 
-        int nouveauRapport = maVoiture1.passerRapport(true);
+        /*int nouveauRapport = maVoiture1.passerRapport(true);
         System.out.println(nouveauRapport);
-        System.out.println(maVoiture1.rapportCourant);
+        System.out.println(maVoiture1.rapportCourant);*/
 
         maVoiture1.tournerOrientation(true, 10);
         maVoiture3.tournerOrientation(false, 30);
@@ -232,7 +232,7 @@ public class Main {
         System.out.println(comparaisonSens);
 
         //L'objet qui va être manipulé dans la méthode "passerRapport" sera "maVoiture4".
-        maVoiture4.passerRapport(true);
+        //maVoiture4.passerRapport(true);
 
         maVoiture1.accelerer(70);
         System.out.println(maVoiture1.vitesse);
@@ -376,22 +376,33 @@ public class Main {
         //  par exemple : la variable d'environnement "path"
         //Si l'on cherche une variable d'environnement particulière, on peut dans "getenv()",
         //  passer en valeur le nom de cette variable recherchée
-        System.out.println(System.getenv("Path"));
+        /*System.out.println(System.getenv("Path"));*/
 
         //Pour instancier "Scanner", il faut impérativement passer en paramètre du constructeur le canal ou le flux d'entrée
         //  en l'occurence "System.in"
         //L'entrée qui est scannée, peut être parcourue prograssivement à partir du début de multiples manières
-        Scanner sc = new Scanner(System.in);
+        /*Scanner sc = new Scanner(System.in);*/
 
         //La plus simple étant de lire la prochaine ligne avec "nextLine"
         //String ligneSuivante = sc.nextLine();
         //System.out.println(ligneSuivante);
 
         //Une autre méthode pratique "nextInt"
-        int entierSuivant = sc.nextInt();
-        System.out.println(entierSuivant);
+        //int entierSuivant = sc.nextInt();
+        /*System.out.println(entierSuivant);*/
 
-        //Il y a aussi la méthode "nextBoolean"
+        //Il y a aussi la méthode "nextBoolean" pour la classe "System"
+
+        //Pour un "int" c'est la classe Integer
+        Integer i = Integer.valueOf(10);
+        System.out.println(i);
+        float f1 = Float.parseFloat("14.3");
+
+        //Si l'on veut explicitement donner une valeur à la propriété "rapportCourant"
+        //Comme ceci toutes les caractéristiques de l'objet sont accessible
+        //Par exemple la méthode ".equals()"
+        maVoiture6.rapportCourant = Integer.valueOf(4);
+        System.out.println(maVoiture6.rapportCourant);
     }
 
 }

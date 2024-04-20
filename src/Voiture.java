@@ -28,7 +28,12 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    String couleur;
 
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
-   int rapportCourant;
+   //Mais avec son type primitif, on ne sait pas si ce rapportCourant est 0 signifiant on est sur le point mort
+   //  ou bien que ce rapportCourant n'a juste pas encore  té valorisé
+   //int rapportCourant;
+   //On le transforme en Integer
+   //  Donc désormais rapportCourant par défaut vaut "null"
+   Integer rapportCourant;
 
    //La classe Voiture n'a plus de propriétés comme carburation et nbCylindres
    //Mais comme on veux à partir de la Voiture avoir accès à ces informations
@@ -145,6 +150,8 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    //Cette méthode est une méthode d'instance, parce qu'elle implique l'attribut "rapportCourant"
    //Cet attribut "rapportCourant" de l'objet particulier est manipulé.
    //Cette méthode nécessite d'être invoquée à partir d'une Voiture en particulier
+
+   /*
    int passerRapport(boolean augmenter){
       if (augmenter){
          //cela signifie le rapportCourant de l'objet actuellement manipulé pendnat l'exécution
@@ -158,6 +165,8 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
       }
       return rapportCourant;
    }
+
+    */
 
    //On ne peut retourner qu'une seule valeur d'un seul type,
    //Mais une méthode peut avoir plusieurs paramètres
