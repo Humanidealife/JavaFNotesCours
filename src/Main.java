@@ -410,6 +410,21 @@ public class Main {
         maVoiture7.rapportCourant++;
 
         System.out.println(maVoiture6.rapportCourant);
+
+        //La conversion de type "int" est converit en "String"
+        //Avec cette façon, il faut que la valeur de la "String" soit compatible avec le "int"
+        int i2 = Integer.parseInt("89");
+        System.out.println(i2);
+
+        //Transformer un "String" à un autre type, cela passe généralement par la méthode "parse" de la calsse conteneur du type cible
+        //Pour faire l'inverse  c'est possible avec
+        String i3 = String.valueOf(i2);
+        System.out.println(i3);
+
+        //Pour convertir entre les types numériques
+        int i4 = 45;
+        long i4AsLong = i4;//Veriosn Java 17
+
     }
 
 }
