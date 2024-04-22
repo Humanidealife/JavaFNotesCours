@@ -426,7 +426,25 @@ public class Main {
         long i4AsLong = i4;//Veriosn Java 17
 
         //"boiteSemiAuto" n'est ici qu'un raccourci pour dire la valeur "2"
+
+        //Pour valoriser le "TypeBoiteVitesse" d'une Voiture, il fuat obligatoirement séléctionner
+        //  une des valeurs de l'énumération "TypeBoiteVitesse", le choix est donc restreint à une gamme prédéterminée
         maVoiture10.typeBoite = TypeBoiteVitesse.SEMI_AUTO;
+
+        //On peut aussi utiliser des tpes énumérés dans un "switch case"
+        switch(maVoiture10.typeBoite){
+            case AUTO :
+                System.out.println("La boîte de cette voiture est automatique");
+                break;
+            case SEMI_AUTO :
+                System.out.println("La boîte de cette voiture est semi-automatique");
+                break;
+            case MANUELLE :
+                System.out.println("La boîte de cette voiture est manuelle");
+                break;
+        }
+
+
         //On peut également écrire comme
         //maVoiture10.typeBoite = 2;
 
