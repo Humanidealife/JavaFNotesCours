@@ -20,7 +20,11 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    static int nbRoues = 4;
 
    int nbPortes = 5;
-   boolean automatique;
+   //boolean automatique;
+   //Pour avoir automatique = 1, semi-automatique = 2 et manuelle =3, on ajout un "int"
+   //Pour que ce code soit compréhensible, il faut ajouter à Voiture des propriétés staitques pour référencer ces valeurs
+
+   int typeBoite;
    // la propriété couleur bénéficie d'une valeur par défaut, qui est null.
    //String n'est pas un type primitif, String est un type objet, c'est une classe
    //Cette classe qui représente une chaîne de caractères bénéficie de propriétés

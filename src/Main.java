@@ -136,7 +136,7 @@ public class Main {
 
         Voiture maVoiture1 = new Voiture();
         maVoiture1.nbPortes = 3;
-        maVoiture1.automatique = true;
+        //maVoiture1.automatique = true;
         maVoiture1.couleur = "Blanche";
 
         System.out.println("La couleur de ma voiture 1 est de couleur " + maVoiture1.couleur);
@@ -312,7 +312,7 @@ public class Main {
 
         //Mais si l'on ne veut pas créer une varaible supplémentaire, on peut transtyper la variable directement en écrivant
         //C'est un transtypage à la volée
-        ((Voiture)maVoiture9).automatique = true;
+        //((Voiture)maVoiture9).automatique = true;
 
 
         Moteur moteur10 = new Moteur();
@@ -424,6 +424,11 @@ public class Main {
         //Pour convertir entre les types numériques
         int i4 = 45;
         long i4AsLong = i4;//Veriosn Java 17
+
+        //"boiteSemiAuto" n'est ici qu'un raccourci pour dire la valeur "2"
+        maVoiture10.typeBoite = TypeBoiteVitesse.SEMI_AUTO;
+        //On peut également écrire comme
+        //maVoiture10.typeBoite = 2;
 
     }
 
