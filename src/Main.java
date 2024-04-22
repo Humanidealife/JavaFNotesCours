@@ -431,22 +431,26 @@ public class Main {
         //  une des valeurs de l'énumération "TypeBoiteVitesse", le choix est donc restreint à une gamme prédéterminée
         maVoiture10.typeBoite = TypeBoiteVitesse.SEMI_AUTO;
 
+        //Avec un constructeur du "TypeBoiteVitesse"
+        System.out.println("Le type de ma boîte de vitesse est " + maVoiture10.typeBoite.nomTypeBoite);
+
         //On peut aussi utiliser des tpes énumérés dans un "switch case"
-        switch(maVoiture10.typeBoite){
-            case AUTO :
+        /*switch(maVoiture10.typeBoite) {
+            case AUTO:
                 System.out.println("La boîte de cette voiture est automatique");
                 break;
-            case SEMI_AUTO :
+            case SEMI_AUTO:
                 System.out.println("La boîte de cette voiture est semi-automatique");
                 break;
-            case MANUELLE :
+            case MANUELLE:
                 System.out.println("La boîte de cette voiture est manuelle");
                 break;
-        }
-
+        }*/
 
         //On peut également écrire comme
         //maVoiture10.typeBoite = 2;
+
+
 
     }
 

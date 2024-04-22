@@ -9,7 +9,25 @@
 public enum TypeBoiteVitesse {
     //"final" est le mot clé qui signifie que la valeur de cette propriété ne pourra jamais être modifiée.
     //  C'est-à-dire ici on définit des constances, dans ce cas-là, selon la convention, il faut nommer ces variables constantes tout en Majuscule
-    AUTO,
-    SEMI_AUTO,
-    MANUELLE
+
+    //Il est possible de créer des formes plus complexes d'énumération en donnant un attribut au type, comme s'il s'agit d'une classe normale
+    //Par exemple, si l'on veut donner à "TypeBoiteVitesse" un attribut sous forme de String qui indique
+    //  explicitement de quoi l'énumération est constituée.
+    AUTO("Automatique"),
+    SEMI_AUTO("Semi-automatique"),
+    MANUELLE("Manuelle");
+
+    //On peut valoriser pour chacun des éléments, en l'occurence, "AUTO", "SEMI_AUTO" et "MANUELLE",
+    //   le nom du type de la boîte de manière explicite entre parenthèses
+    //Ce qui va se passer, c'est que Java va essayer de trouver un constructeur qui est capable d'accueillir les String
+    String nomTypeBoite;
+    //Ajout d'un constructeur
+    TypeBoiteVitesse(String nomTypeBoiteChacun){
+        this.nomTypeBoite = nomTypeBoiteChacun;
+
+
+    }
+
+
+
 }
