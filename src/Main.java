@@ -450,8 +450,12 @@ public class Main {
         //On peut également écrire comme
         //maVoiture10.typeBoite = 2;
 
+        //Une autre méthode pour savoir quel est le "int" qui est derrière chaque propriété ? Par exemple pour semi-automatique
+        System.out.println(maVoiture10.typeBoite.ordinal());
 
-
+        //Comment récupérer un élément de l'énumération en donnant simplement son nom sous forme de String
+        TypeBoiteVitesse semiAuto = TypeBoiteVitesse.valueOf("SEMI_AUTO");
+        System.out.println("La boîte récupérée par le String est " + semiAuto.nomTypeBoite);
     }
 
 }
