@@ -435,16 +435,16 @@ public class Main {
         System.out.println("Le type de ma boîte de vitesse est " + maVoiture10.typeBoite.nomTypeBoite);
 
         //On peut aussi utiliser des tpes énumérés dans un "switch case"
-        /*switch(maVoiture10.typeBoite) {
+        /*switch (maVoiture10.typeBoite) {
             case AUTO:
                 System.out.println("La boîte de cette voiture est automatique");
-                break;
+                break ;
             case SEMI_AUTO:
                 System.out.println("La boîte de cette voiture est semi-automatique");
-                break;
+                break ;
             case MANUELLE:
                 System.out.println("La boîte de cette voiture est manuelle");
-                break;
+                break ;
         }*/
 
         //On peut également écrire comme
@@ -456,6 +456,18 @@ public class Main {
         //Comment récupérer un élément de l'énumération en donnant simplement son nom sous forme de String
         TypeBoiteVitesse semiAuto = TypeBoiteVitesse.valueOf("SEMI_AUTO");
         System.out.println("La boîte récupérée par le String est " + semiAuto.nomTypeBoite);
+
+        //Voici un tableau unidimensionnel qui a une seule dimension de 5 éléments de type « int »
+        //La valeur à l'intérieur du crochet désigne le nombre d'éléments, le nombre d'espaces que va comprendre le tableau
+        //  et lorsqu'il s'agit d'un tableau unidimensionnel, il n'y a qu'un seul chiffre.
+        //Pour manipuler ces tableaux, on est dans l'obligation de les affecter à des variables.
+        //Le type de la variable sera le type du contenu du tableau
+        //Ces tableaux pour l'instant sont constitués de 5 espaces vides.
+        int [] tableauDeInt = new int[5];
+        //S'il s'agissait d'un tableau de caractères
+        char[] tableauDeChar = new char[5];
+        //S'il s'agissait d'un tableau de Voiture (Objet, pas type primitif)
+        Voiture[] tableauDeVoiture = new Voiture[5];
     }
 
 }
