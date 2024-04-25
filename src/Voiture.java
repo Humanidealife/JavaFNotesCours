@@ -232,4 +232,9 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    public void vidanger() {
       System.out.println("Dévisser le bochon sous la culasse et attendre que cela coule");
    }
+
+   public static void main(String... args){
+      System.out.println("Ici je commence dans la classe Voiture");
+
+   }
 }

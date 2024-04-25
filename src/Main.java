@@ -1,8 +1,31 @@
 import java.util.Scanner;
 
 public class Main {
+
+    int unAttribut = 5;
+    void quelqueChose(){
+        System.out.println("Une méthode de la classe Main");
+    }
+
+    //Ce qui est spécial pour la classe "Main", c'est qu'elle possède une méthode "main"
+    //La méthode "main" est statique, mais cette méthode constitue le point d'entrée de notre programme, notre logiciel
+    //  quand "main" est écrite ainsi "public static void main(String... args){}"
+    //Lorsque l'on exécute cette classe avec l'IDE ou avec des lignes de commande, on indique à la machine virtuelle que "Main" dispose
+    //  la méthode "main", et que c'est à cet endroit-là que l'on veut commencer
+    //Cette méthode "public static void main(String... args){}", dans un logiciel, pourrait apparaître à de multiples endroits.
+    //Par exemple, on peut ajouter cette méthode "main" dans la classe "Voiture"
+
+    //Le tableau de String ou cet ensemble de String nous permet, lorsque l'on exécute la classe, de lui envoyer des paramètres complémentaires
     public static void main(String[] args) {
+
+        Main mn = new Main();
+        System.out.println(mn.unAttribut);
+        mn.quelqueChose();
+
+
         System.out.println("Hello world!");
+        //pour accepter un argument
+        //System.out.println("Hello c'est vrai" + args[0]);
         System.out.println("Deuxième ligne");
         int age;
         long nombreDePas = 14527785478789L;
