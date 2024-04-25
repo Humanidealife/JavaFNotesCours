@@ -537,6 +537,27 @@ public class Main {
         //Depuis Java 5, il est possible de fournir un ensemble d'arguments du même type à une méthode ou à un constructeur
         //  sans avoir à les ajouter dans un tableau
         voitureDeTransport1.transporter(passagerA, depart, etape1, etape2, etape3);
+
+        //Pour déclarer un tableau multidimensionnel, c'est toujours la même syntaxe.
+        //On ajoute autant de crochets supplémentaires que de dimensions supplémentaires à notre tableau
+        //Ci-dessous est un tableau à deux dimensions
+        //On pourrait dire que "5" correspond aux colonnes du tableau, "3" aux lignes du tableau
+        int[][] tableauDeuxDimensions = new int [5][3];
+        //Pour valoriser les éléments du tableau : par exemple, un élément de la 2ème colonne et la 3ème ligne
+        tableauDeuxDimensions[1][2] = 16;
+        //Pour connaître le contenu du tableau, maintenant, il faut faire appel à deux boucles imbriquées
+        //Une première pour itérer sur les colonnes
+        //ici "length" correspond à la taille de la première dimension du tableau
+        for (int col=0 ; col<tableauDeuxDimensions.length; col++){
+            //Pour chaque colonne, une nouvelle boucle
+            //Pour connaître la taille d'une ligne, puisqu'un tableau à deux dimensions est un tableau à une dimension dont chacun
+            //  des élements est également un tableau
+            for (int ligne=0; ligne<tableauDeuxDimensions[col].length; ligne++){
+                System.out.println("L'élément contenu à la position " + col + "," + ligne + " vaut " + tableauDeuxDimensions[col][ligne]);
+
+            }
+        }
+
     }
 
 }
