@@ -198,12 +198,25 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    }
 
 
-   Ville transporter (Passager passager, Ville villeDeDepart){
+   //Admettons maintenant que la méthode "transporter" puisse recevoir en paramètre le "passager" et "villeDeDepart", mais aussi
+   //  la liste de toutes les villes par lesquelles le "passager" va transiter
+   //Dans ce cas-là, on a besoin d'un tableau de ville
+   //Lorsque la méthode "transporter" est invoquée, et bien ce tableau pourra contenir 0 ou à n "villeEtapes"
+   //Pour que les "etape1, etape2, etape3" fonctionnent comme paramètre, il faut remplacer l'argument de type tableau par un "varags"
+   // c'est-à-dire arguments variables. On remplace les "[]" par "..." ce qui s'appelle une "ellipse"
+   //Ceci signifie en Java qu'après "villeDeDepart", il peut y avoir un nombre variable de villeEtapes
+   //Maintenant comment utiliser "villeEtapes" qui va contenir de 0 à n villes ?
+   //En réalité Java va transformer tous ces arguments en un tableau de "ville"
+   //Finalement "villeEtapes" bénéficie de toutes les capacités d'un tableau
+   //Mais on ne peut avoir qu'une seule ellipse dans une méthode ou d'un constructeur
+   //  et le paramètre sous forme d'éllipse doit impérativement constituer le dernier paramètre des arguments
+   Ville transporter (Passager passager, Ville villeDeDepart, Ville... villeEtapes){
       //Si une méthode de cette classe VehiculeMotorise ne convient pas à la classe Voiture
       //Dans ce cas-là on a tout à fiat le droit de réécrire la méthode concernée dans la classe fille
       System.out.println("La voiture transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
       System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
-
+      System.out.println("La première ville étapes est " + villeEtapes[0].nom);
+      System.out.println("La taille du tableau villeEtapes est " + villeEtapes.length);
       //retour de la villeDArrivee
       //Il faut d'abord instancier une ville
       Ville villeDArrivee = new Ville();

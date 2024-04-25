@@ -486,6 +486,34 @@ public class Main {
         //Mot clé "length" qui permet de connaître la taille d'un tableau.
         //Il s'agit de compter la taille du tableau sans aucune considération de son contenu
         System.out.println("La taille du tableau de caractères est " + tableauDeChar.length );
+
+        Passager passagerA = new Passager();
+        passagerA.nom = "AAA";
+        passagerA.prenom = "Aaa";
+
+        Ville depart = new Ville();
+        depart.nom = "Aville";
+
+        Ville etape1 = new Ville();
+        etape1.nom = "Première étape";
+
+        Ville etape2 = new Ville();
+        etape2.nom = "Deuxième étape";
+
+        Ville etape3 = new Ville();
+        etape3.nom = "Troisième étape";
+
+        Voiture voitureDeTransport1 = new Voiture();
+
+        /*Ville[] villeEtapes = new Ville[3];
+        villeEtapes[0] = etape1;
+        villeEtapes[1] = etape2;
+        villeEtapes[2] = etape3;*/
+
+        //Il est dommage de construire un tableau intermédiaire pour passer en paramètre cet ensemble de villeEtapes
+        //Depuis Java 5, il est possible de fournir un ensemble d'arguments du même type à une méthode ou à un constructeur
+        //  sans avoir à les ajouter dans un tableau
+        voitureDeTransport1.transporter(passagerA, depart, etape1, etape2, etape3);
     }
 
 }
