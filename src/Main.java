@@ -462,12 +462,30 @@ public class Main {
         //  et lorsqu'il s'agit d'un tableau unidimensionnel, il n'y a qu'un seul chiffre.
         //Pour manipuler ces tableaux, on est dans l'obligation de les affecter à des variables.
         //Le type de la variable sera le type du contenu du tableau
-        //Ces tableaux pour l'instant sont constitués de 5 espaces vides.
+        //Ces tableaux pour l'instant sont constitués de 5 espaces vides. Plus précisément,
+        //  de 5 fois la valeur 0 pour le tableau de "int", de 5 caractères vides pour le tableau de "char",
+        //  et de 5 fois "null" pour le tableau de "Voiture". Les tableaux d'Objets sont au départ constitués de valeur "null".
+
         int [] tableauDeInt = new int[5];
         //S'il s'agissait d'un tableau de caractères
         char[] tableauDeChar = new char[5];
         //S'il s'agissait d'un tableau de Voiture (Objet, pas type primitif)
         Voiture[] tableauDeVoiture = new Voiture[5];
+
+        //Pour valoriser un ou plusieurs éléments d'un tableau,
+        tableauDeInt[1] = 15;
+        tableauDeInt[4] = 18;
+        //Pour afficher la valeur d'une des positions du tableau
+        System.out.println("Le deuxième élément du tableau d'entier est " + tableauDeInt[1]);
+
+        //Pour un tableau d'Object
+        tableauDeVoiture[1] = maVoiture8;
+        tableauDeVoiture[4] = new Voiture("Diesel",4);
+        System.out.println("Le deuxième élément de mon tableau de voiture est " + tableauDeVoiture[1].couleur);
+
+        //Mot clé "length" qui permet de connaître la taille d'un tableau.
+        //Il s'agit de compter la taille du tableau sans aucune considération de son contenu
+        System.out.println("La taille du tableau de caractères est " + tableauDeChar.length );
     }
 
 }
