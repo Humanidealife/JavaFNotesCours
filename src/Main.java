@@ -554,9 +554,12 @@ public class Main {
             //  des élements est également un tableau
             for (int ligne=0; ligne<tableauDeuxDimensions[col].length; ligne++){
                 System.out.println("L'élément contenu à la position " + col + "," + ligne + " vaut " + tableauDeuxDimensions[col][ligne]);
-
             }
         }
+
+        //Un tableau de 4 dimensions
+        int[][][][] tableau4D = new int[5][6][7][8];
+        tableau4D[1][2][3][4] = 48;
 
     }
 
