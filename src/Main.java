@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -560,6 +562,20 @@ public class Main {
         //Un tableau de 4 dimensions
         int[][][][] tableau4D = new int[5][6][7][8];
         tableau4D[1][2][3][4] = 48;
+
+        //Instanciation d'une "ArrayList"
+        //Le type de la variable dans laquelle on va stocker cette "ArrayList" pourrait être "ArrayList", c'est ce qui paraît le plus évident,
+        //  mais en général, on va plutôt utiliser le type de l'interface, on va donc utiliser le type "List".
+        //C'est une bonne pratique, et cette bonne pratique est bien souvent valable pour toutes "Class" qui bénéficient d'une interface.
+        //"List" et "ArrayList" ont besoin d'imports
+        //"<>" s'appelle l'opérateur diamant
+        List list = new ArrayList();
+        //Pour ajouter quelque chose dans la List
+        //Une List, comme toutes collections, n'acceptent que des objets, mais grâce à l'auto-boxing,
+        //  on peut aussi ajouter des types primitifs, le type conteneur sera instancié de façon transparente
+        //On peut mélanger le type des Objets dans une collection
+        list.add(3);
+        list.add(maVoiture3);
 
     }
 
