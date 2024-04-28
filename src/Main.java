@@ -570,12 +570,43 @@ public class Main {
         //"List" et "ArrayList" ont besoin d'imports
         //"<>" s'appelle l'opérateur diamant
         List list = new ArrayList();
-        //Pour ajouter quelque chose dans la List
+        //Pour ajouter quelque chose dans la List, "add" attend en paramètre un Objet
         //Une List, comme toutes collections, n'acceptent que des objets, mais grâce à l'auto-boxing,
         //  on peut aussi ajouter des types primitifs, le type conteneur sera instancié de façon transparente
-        //On peut mélanger le type des Objets dans une collection
+        //On peut mélanger le type des Objets dans une Collection
+        //Comme il s'agit d'une List, on peut ajouter plusieurs fois le même élément dans ma Collection
+        list.add(maVoiture3);
         list.add(3);
         list.add(maVoiture3);
+
+        //Pour supprimer un élément de la Collection, la méthode "remove" va uniquement supprimer le premier
+        //  élément rencontré correspondant à cet Objet
+        list.remove(maVoiture3);
+
+        //Pour récupérer un élement à une position particulière dans la List
+        //Mais comme l'on ne peut pas anticiper le type de l'élément récupéré, pour lier le résultat à une variable
+        //  cette variable devrait être de type "Object"
+        Object objetSelectionne1 = list.get(0);
+        System.out.println(objetSelectionne1);
+        //Et si l'on est sûr du type de l'Objet sélectionné, on peut effectuer un trans-typage
+        Voiture objetSelectionne2 = (Voiture)list.get(1);
+        System.out.println(objetSelectionne2.couleur);
+
+        //Mais il est quand même très rare de stocker les Objets de différents types dans une Collection.
+        //  En général, c'est un seul type d'Objet dans une Collection
+        //Depuis Java 5, il est possible de préciser ce qui sera déposé dans une collection, grâce à l'Opérateur Diamant <>
+        //List<Voiture> listDeVoiture = new ArrayList<Voiture>();
+        //Mais depuis Java 7, on peut écrire comme ci-dessous
+        //Ce qui se cache derrière cet Opérateur Diamant, c'est "Generic"
+        //"Generic" était une révolution pour Java qui dépasse largement le cadre des Collections
+        List<Voiture> listDeVoiture = new ArrayList<>();
+        listDeVoiture.add(maVoiture1);
+        listDeVoiture.add(maVoiture2);
+        listDeVoiture.add(maVoiture3);
+        //Comme la Collection contient obligatoirement des Objets de type Voiture,
+        //  il n'est plus nécessaire de trans-typer le résultat après un "get"
+        Voiture voitureSelectionnee1 = listDeVoiture.get(1);
+
 
     }
 
