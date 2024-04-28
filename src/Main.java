@@ -621,14 +621,39 @@ public class Main {
         //À gauche des deux points : la variable qui va contenir successivement chacun des éléments de la Collection lors de son parcours
         for (Voiture voiture : setDeVoiture){
             //Ici, on peut manipuler la variable "voiture"
-            System.out.println(voiture.couleur);
+            System.out.println("la couleur obtenue par foreach est " + voiture.couleur);
             //Dans ce bloc d'instructions l'on peut manipuler tous les objets de la collection, à une exception près :
             //On ne peut pas modifier la collection elle-même pendant son parcours,
             //  par exemple, on ne peut pas rajouter une voiture dans la collection ou en supprimer une durant l'itération
             //Ces manipulations sont tout à fiat possibles lorsque l'on parcourt un tableau, même cela nécessite une manipulation de code
             //Par exemple ce code engendra une erreur : setDeVoiture.remove(voiture);
+        }
+
+        //Une autre manière plus ancienne, mais toujours valable, de parcourir une Collection.
+        //Il s'agit d'utiliser un "iterator"
+        //Un "iterator" est une interface, pour obtenir un "iterator", il faut d'abord prendre la collection
+        //Cette méthode "iterator" va retourner une Classe qui implémente l'interface "Iterator"
+        //Si l'on ne veut pas être embêté par le trans-typage, on peut ajouter un Opérateur Diamant
+        //  pour préciser ce que va contenir l' "iterator". Ici, il s'agit d'un "iterator" de Voiture.
+        //Il faut également importer cette interface
+        //"iterator" va commencer au début de la collection. Et à chaque fois que l'on va appeler la méthode "next" de l' "iterator",
+        //  on va obtenir le prochain élément.
+
+        Iterator<Voiture> it = setDeVoiture.iterator();
+        /*
+        Voiture v = it.next();
+        System.out.println("la couleur obtenue par l'itérator est " + v.couleur);
+        */
+
+        //Pour savoir combien d'éléments contient cette itération, on peut utiliser la méthode "hasNext",
+        //  cette méthode retourne "true" tant qu'il existe un prochain élément dans la collection
+        while(it.hasNext()){
+            //Dans le bloc d'instruction, on manipule le prochain élément de la collection grâce au ".next"
+            Voiture vIterator=it.next();
+            System.out.println("la couleur obtenue par l'itérator et la méthode 'hasNext' est " + vIterator.couleur);
 
         }
+
 
         //On peut afficher la taille de la collection pour vérifier si l'élément doublement ajouté est ignoré
         System.out.println("La taille de setDeVoiture est " + setDeVoiture.size());
