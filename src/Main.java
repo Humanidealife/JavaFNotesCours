@@ -616,6 +616,20 @@ public class Main {
         setDeVoiture.add(maVoiture4);
         //setDeVoiture.add(maVoiture1);
 
+        //Une boucle "Foreach", à partir de la Collection de Voiture, s'appelle ici setDeVoiture.
+        //À droite des deux points : "setDeVoiture" est la Collection sur laquelle l'on veut itérer
+        //À gauche des deux points : la variable qui va contenir successivement chacun des éléments de la Collection lors de son parcours
+        for (Voiture voiture : setDeVoiture){
+            //Ici, on peut manipuler la variable "voiture"
+            System.out.println(voiture.couleur);
+            //Dans ce bloc d'instructions l'on peut manipuler tous les objets de la collection, à une exception près :
+            //On ne peut pas modifier la collection elle-même pendant son parcours,
+            //  par exemple, on ne peut pas rajouter une voiture dans la collection ou en supprimer une durant l'itération
+            //Ces manipulations sont tout à fiat possibles lorsque l'on parcourt un tableau, même cela nécessite une manipulation de code
+            //Par exemple ce code engendra une erreur : setDeVoiture.remove(voiture);
+
+        }
+
         //On peut afficher la taille de la collection pour vérifier si l'élément doublement ajouté est ignoré
         System.out.println("La taille de setDeVoiture est " + setDeVoiture.size());
         //La collection de "HashSet" n'est pas ordonnée, et ce qui est pire, c'est que la position des éléments est imprévisible.
