@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -606,6 +604,26 @@ public class Main {
         //Comme la Collection contient obligatoirement des Objets de type Voiture,
         //  il n'est plus nécessaire de trans-typer le résultat après un "get"
         Voiture voitureSelectionnee1 = listDeVoiture.get(1);
+
+        maVoiture1.couleur = "Arc-en-ciel";
+        maVoiture6.couleur = "bleu foncé";
+        maVoiture4.couleur = "On ne sait pas";
+        //Implémentation de "HachSet"
+        //Mais si l'on ajoute le même élément deux fois, le deuxième est automatiquement ignoré
+        Set<Voiture> setDeVoiture = new HashSet();
+        setDeVoiture.add(maVoiture1);
+        setDeVoiture.add(maVoiture6);
+        setDeVoiture.add(maVoiture4);
+        //setDeVoiture.add(maVoiture1);
+
+        //On peut afficher la taille de la collection pour vérifier si l'élément doublement ajouté est ignoré
+        System.out.println("La taille de setDeVoiture est " + setDeVoiture.size());
+        //La collection de "HashSet" n'est pas ordonnée, et ce qui est pire, c'est que la position des éléments est imprévisible.
+        //  Il ne s'agit pas du tout de l'ordre d'ajout,
+        //  il n'y a pas de méthode pour récupérer un élément particulier dans le la collection "HashSet"
+        //Au pire, on peut transformer le "Set" en tableau
+        Voiture VoitureDansSet1 = (Voiture)setDeVoiture.toArray()[0];
+        System.out.println("la couleur de la Voiture dans Set en index 0 est " + VoitureDansSet1.couleur);
 
 
     }
