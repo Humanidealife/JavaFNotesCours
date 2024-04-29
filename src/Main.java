@@ -664,6 +664,25 @@ public class Main {
         Voiture VoitureDansSet1 = (Voiture)setDeVoiture.toArray()[0];
         System.out.println("la couleur de la Voiture dans Set en index 0 est " + VoitureDansSet1.couleur);
 
+        //Création d'une "HashMap"
+        //Par défaut sans l'opérateur diamant, comme pour les "List" et "Set", on peut ajouter tous types d'Objet dans notre "Map",
+        //  autant pour la clé que pour la valeur
+        Map<String, Voiture> map = new HashMap();
+        //Pour ajouter quelque chose dans la "Map", on utilise la méthode "put".
+        //  Cette méthode prend en paramètre la clé et la valeur, de type Objet donc toutes les deux
+        //Pour indiquer à l'avance ce que va contenir la "Map", pour obliger l'utilisateur à en insérer que des Objets d'un type particulier,
+        //  dans ce cas-là, on utilise l'opérateur diamant.
+        map.put("1", maVoiture1);
+        map.put("3", maVoiture3);
+        //Tout comme les "List", les "Map" possèdent d'une méthode "get" qui nous permet de retourner un élément particulier.
+        //Mais cette fois-ci, la méthode "get" ne prend pas en paramètre l'index, sous-entendu la position se trouve l'Objet dans la "Map",
+        //  ici "get" attend en paramètre la clé de l'objet que l'on veut récupérer
+        Voiture mapDeVoiture1 = map.get("1");
+        System.out.println("La couleur de voiture obtenue par la map est " + mapDeVoiture1.couleur);
+
+        //Mais comme pour les "List" et pour les "Set" pour tous types de Collections,
+        //  les clés sont toutes du même type, et les valeurs du même type également
+        //map.put(2,"Bonjour");
 
     }
 
