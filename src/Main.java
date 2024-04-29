@@ -1,3 +1,5 @@
+import jdk.jshell.execution.Util;
+
 import java.util.*;
 
 public class Main {
@@ -667,18 +669,39 @@ public class Main {
         //Création d'une "HashMap"
         //Par défaut sans l'opérateur diamant, comme pour les "List" et "Set", on peut ajouter tous types d'Objet dans notre "Map",
         //  autant pour la clé que pour la valeur
-        Map<String, Voiture> map = new HashMap();
+        Map<String, Voiture> mapDeVoiture = new HashMap();
         //Pour ajouter quelque chose dans la "Map", on utilise la méthode "put".
         //  Cette méthode prend en paramètre la clé et la valeur, de type Objet donc toutes les deux
         //Pour indiquer à l'avance ce que va contenir la "Map", pour obliger l'utilisateur à en insérer que des Objets d'un type particulier,
         //  dans ce cas-là, on utilise l'opérateur diamant.
-        map.put("1", maVoiture1);
-        map.put("3", maVoiture3);
+        mapDeVoiture.put("1", maVoiture1);
+        mapDeVoiture.put("6", maVoiture6);
         //Tout comme les "List", les "Map" possèdent d'une méthode "get" qui nous permet de retourner un élément particulier.
         //Mais cette fois-ci, la méthode "get" ne prend pas en paramètre l'index, sous-entendu la position se trouve l'Objet dans la "Map",
         //  ici "get" attend en paramètre la clé de l'objet que l'on veut récupérer
-        Voiture mapDeVoiture1 = map.get("1");
+        Voiture mapDeVoiture1 = mapDeVoiture.get("1");
         System.out.println("La couleur de voiture obtenue par la map est " + mapDeVoiture1.couleur);
+        //Pour parcourir une "Map", on peut utiliser "foreach"
+        //À droite des deux points : la collection sur laquelle l'on veut itérer,
+        //  à gauche des deux points : la variable qui va successivement stocker chacun des éléments de la "Map".
+        //Le problème, c'est que l'élément de la "Map" est matérialisé par une clé et une valeur, c'est un couple d'Objets en réalité,
+        //  mais pas un seul et unique Objet.
+        //Sachant que chaque élément de la "Map" est stocké sous forme d'un Objet qui contient ce couple d'Objets : clé + valeur.
+        //  Cette Classe s'appelle "Entry", "ctrl + espace" pour auto-compléter, on obtient "Map.Entry",
+        //  "Entry" est ici une Classe interne de "Map", "Map.Entry" est le type de la variable.
+        //Pour itérer sur les "Entry" d'une "Map", c'est-à-dire l'ensemble des couples "clé + valeur" de la "Map",
+        //  et bien la Collection sur laquelle que l'on va itérer n'est pas "mapDeVoiture", mais "mapDeVoiture.entrySet()"
+        //  un "Set" c'est un ensemble d' "Entry"
+        for (Map.Entry<String, Voiture> entryDeVoiture: mapDeVoiture.entrySet() ){
+            //Dans le bloc d'instructions, chacune de ces "Entry" pourrait être exploitée
+            //On peut en utiliser sa clé ou sa valeur
+            //Pour connaître la clé d'une "Entry", !!! à la condition que nous ayons déclaré notre variable "entryDeVoiture" de type "Entry"
+            //  en ajoutant l'opérateur diamant, qui indique ce que va contenir chacune de ces "entry"(entrées)
+            String stringCle = entryDeVoiture.getKey();
+            //Pou obtenir la valeur c'est
+            Voiture voitureValeur = entryDeVoiture.getValue();
+            System.out.println("L'élément suivant a pour clé : " + stringCle + ", il s'agit d'une voiture de couleur " + voitureValeur.couleur);
+        }
 
         //Mais comme pour les "List" et pour les "Set" pour tous types de Collections,
         //  les clés sont toutes du même type, et les valeurs du même type également
