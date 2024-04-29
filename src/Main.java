@@ -702,6 +702,19 @@ public class Main {
             Voiture voitureValeur = entryDeVoiture.getValue();
             System.out.println("L'élément suivant a pour clé : " + stringCle + ", il s'agit d'une voiture de couleur " + voitureValeur.couleur);
         }
+        //Parfois ce qui nous intéresse ce n'est pas l'ensemble des couples (clé + valeur),
+        //  mais c'est l'ensemble des clés ou bien l'ensemble des valeurs uniquement
+        //Pour obtenir la Collection des clés uniquement
+        //Mais "mapDeVoiture.keySet()", on retourne un "Set", car les clés sont uniques
+        for(String mapDeVoitureCle : mapDeVoiture.keySet()){
+            System.out.println("L'élément suivant a pour clé: " + mapDeVoitureCle );
+
+        }
+        //Pour afficher l'ensemble des valeurs
+        //Attention : ici "mapDeVoiture.values()" on retourne une "List", puisqu'il est possible d'avoir des doublons dans les valeurs.
+        for(Voiture mapDeVoitureValeur : mapDeVoiture.values()){
+            System.out.println("L'élément suivant a pour couleur: " + mapDeVoitureValeur.couleur);
+        }
 
         //Mais comme pour les "List" et pour les "Set" pour tous types de Collections,
         //  les clés sont toutes du même type, et les valeurs du même type également
