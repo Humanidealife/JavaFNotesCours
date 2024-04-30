@@ -720,6 +720,50 @@ public class Main {
         //  les clés sont toutes du même type, et les valeurs du même type également
         //map.put(2,"Bonjour");
 
+
+        //La méthode "size" va permettre d'obtenir la taille d'une Collection, sous-entendu le nombre d'éléments qu'elle contient
+        System.out.println("Le nombre d'éléments dans la mapDeVoiture est de : " + mapDeVoiture.size());
+
+        //La méthode "isEmpty" va tester si la Collection est vide ou non ?
+        System.out.println("La mapDeVoiture est une collection vide, cela est " + mapDeVoiture.isEmpty());
+
+        //La méthode "contains" va permettre de vérifier si un Objet existe dans une Collection.
+        //Pour une "List" ou un "Set"
+        System.out.println("L'objet maVoiture1 existe dans cette List, cela est " + listDeVoiture.contains(maVoiture1));
+        //Pour une "Map", on a deux méthodes
+        System.out.println("La clé 1 existe dans la mapDeVoiture, cela est " + mapDeVoiture.containsKey("1"));
+        System.out.println("La valeur maVoiture10 existe dans la mapDeVoiture, cela est " + mapDeVoiture.containsValue(maVoiture10));
+        System.out.println("La valeur maVoiture6 existe dans la mapDeVoiture, cela est " + mapDeVoiture.containsValue(maVoiture6));
+
+        //Pour vider complètement une Collection, on peut utiliser la méthode "clear"
+        //mapDeVoiture.clear();
+        //"Collection" est une Interface, mais Java dispose également une Class qui s'appelle "Collections".
+        //  Cette dernière est une Class utilitaire qui permet de très nombreuses opérations classiques sur
+        //  les "Collection" par le biais de méthodes "static"
+        //Il y a cinquantaine de méthodes, par exemple :
+        //"replaceAll" cette méthode permet de remplacer tous les éléments contenus dans une List qui correspondrait à l'argument "a" par
+        //  l'argument "b"
+        List<String> listDeString = new ArrayList<>();
+        listDeString.add("Un");
+        listDeString.add("Deux");
+        listDeString.add("Trois");
+        //On va remplacer tous les élements qui ont pour valeur "Deux" par un nouvel élément "Cent"
+        Collections.replaceAll(listDeString,"Deux", "Cent");
+        //On va itérer sur la Collection(List) listDeString pour en lire le contenu
+        for(String string : listDeString){
+            System.out.println("L'élément dans la List listDeString est " + string);
+        }
+
+        //Mais on peut tout à faire réaliser sur n'import quel Objet
+        List listDesObjets = new ArrayList<>();
+        listDesObjets.add("Un");
+        listDesObjets.add("Deux");
+        listDesObjets.add("Trois");
+        Collections.replaceAll(listDesObjets,"Deux", maVoiture7);
+        for (Object objet : listDesObjets){
+            System.out.println("L'objet de la List listDesObjets est " + objet);
+        }
+
     }
 
 }
