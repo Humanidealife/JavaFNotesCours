@@ -1,4 +1,4 @@
-public class Voiture extends VehiculeMotorise implements Vidangeable{
+public class Voiture extends VehiculeMotorise implements Vidangeable, Comparable{
    //Convention d’écriture
    /*
    1. Attributs statiques
@@ -236,5 +236,11 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    public static void main(String... args){
       System.out.println("Ici je commence dans la classe Voiture");
 
+   }
+   //Cette Interface dispose d'une méthode qui s'appelle "compareTo"
+   //Cette méthode va retourner un "int" qui doit être supérieur à 0, si l'Objet courant est supérieur à l'Objet passé en paramètre
+   //
+   public int compareTo(Object o) {
+      return 0;
    }
 }

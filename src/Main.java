@@ -764,6 +764,24 @@ public class Main {
             System.out.println("L'objet de la List listDesObjets est " + objet);
         }
 
+
+        //Une List de "int" dans laquelle on va ajouter des "int" de façon désordonnée
+        List<Integer> listEntiers = new ArrayList<>();
+        listEntiers.add(58);
+        listEntiers.add(10);
+        listEntiers.add(8);
+        listEntiers.add(100);
+        listEntiers.add(78);
+        //La Class Collections a une méthode "sort" qui ordonne des éléments de la Collection selon l'ordre naturel
+        Collections.sort(listEntiers);
+        for (Integer chaqueEntier: listEntiers){
+            System.out.println("L'élément de la List listEntiers est " + chaqueEntier);
+        }
+        //Tout cela est pôssible parce que les "int" dispose d'un ordre naturel, une Class qui dispose d'un ordre naturel
+        //  est une Class qui implémente l'Interface "Comparable".
+        //C'est le cas pour les "int", mais ce n'est pas le cas pour les Objets Voiture
+
+        Collections.sort(listDeVoiture);
     }
 
 }
