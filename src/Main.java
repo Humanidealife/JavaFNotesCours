@@ -798,7 +798,6 @@ public class Main {
         //Lorsque l'on ajoute un ordre naturel, il est généralement admis que cet ordre naturel est unique.
 
 
-
     }
 
 }
