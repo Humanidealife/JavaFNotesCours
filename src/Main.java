@@ -797,7 +797,17 @@ public class Main {
         }//On peut voir que l'on a ajouté un ordre naturel à la Class Carre
         //Lorsque l'on ajoute un ordre naturel, il est généralement admis que cet ordre naturel est unique.
 
+        Set<Carre> setCarre = new TreeSet<>();
+        setCarre.add(new Carre(102));
+        setCarre.add(new Carre(101));
+        setCarre.add(new Carre(132));
+        setCarre.add(new Carre(100));
 
+        for (Carre carreComparaisonSet : setCarre){
+            //Les éléments devraient être automatiquement ordonnés
+            System.out.println("L'ordre des éléments du setCarre est : " + carreComparaisonSet.cote);
+
+        }
     }
 
 }
