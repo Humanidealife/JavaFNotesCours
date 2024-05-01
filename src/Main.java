@@ -783,7 +783,22 @@ public class Main {
         //  est une Class qui implémente l'Interface "Comparable".
         //C'est le cas pour les "int", mais ce n'est pas le cas pour les Objets Voiture
 
-        Collections.sort(listDeVoiture);
+        //On va créer une List de Carre
+        List<Carre> listCarre = new ArrayList<>();
+        listCarre.add(new Carre(15));
+        listCarre.add(new Carre(19));
+        listCarre.add(new Carre(5));
+        listCarre.add(new Carre(3));
+        //On ordonne cette List de Carre
+        Collections.sort(listCarre);
+
+        for (Carre carreComparaison : listCarre){
+            System.out.println("Le coté du Carré dans l'ordre est : " + carreComparaison.cote);
+        }//On peut voir que l'on a ajouté un ordre naturel à la Class Carre
+        //Lorsque l'on ajoute un ordre naturel, il est généralement admis que cet ordre naturel est unique.
+
+
+
     }
 
 }
