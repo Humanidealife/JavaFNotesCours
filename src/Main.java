@@ -588,6 +588,11 @@ public class Main {
         //  cette variable devrait être de type "Object"
         Object objetSelectionne1 = list.get(0);
         System.out.println(objetSelectionne1);
+
+        maVoiture1.couleur = "Arc-en-ciel";
+        maVoiture6.couleur = "bleu foncé";
+        maVoiture4.couleur = "On ne sait pas";
+
         //Et si l'on est sûr du type de l'Objet sélectionné, on peut effectuer un trans-typage
         Voiture objetSelectionne2 = (Voiture)list.get(1);
         System.out.println(objetSelectionne2.couleur);
@@ -601,15 +606,12 @@ public class Main {
         //"Generic" était une révolution pour Java qui dépasse largement le cadre des Collections
         List<Voiture> listDeVoiture = new ArrayList<>();
         listDeVoiture.add(maVoiture1);
-        listDeVoiture.add(maVoiture2);
-        listDeVoiture.add(maVoiture3);
+        listDeVoiture.add(maVoiture4);
+        listDeVoiture.add(maVoiture6);
         //Comme la Collection contient obligatoirement des Objets de type Voiture,
         //  il n'est plus nécessaire de trans-typer le résultat après un "get"
         Voiture voitureSelectionnee1 = listDeVoiture.get(1);
 
-        maVoiture1.couleur = "Arc-en-ciel";
-        maVoiture6.couleur = "bleu foncé";
-        maVoiture4.couleur = "On ne sait pas";
         //Implémentation de "HachSet"
         //Mais si l'on ajoute le même élément deux fois, le deuxième est automatiquement ignoré
         Set<Voiture> setDeVoiture = new HashSet();
@@ -777,7 +779,7 @@ public class Main {
         for (Integer chaqueEntier: listEntiers){
             System.out.println("L'élément de la List listEntiers est " + chaqueEntier);
         }
-        //Tout cela est pôssible parce que les "int" dispose d'un ordre naturel, une Class qui dispose d'un ordre naturel
+        //Tout cela est possible parce que les "int" dispose d'un ordre naturel, une Class qui dispose d'un ordre naturel
         //  est une Class qui implémente l'Interface "Comparable".
         //C'est le cas pour les "int", mais ce n'est pas le cas pour les Objets Voiture
 

@@ -1,4 +1,4 @@
-public class Voiture extends VehiculeMotorise implements Vidangeable, Comparable{
+public class Voiture extends VehiculeMotorise implements Vidangeable{
    //Convention d’écriture
    /*
    1. Attributs statiques
@@ -238,9 +238,18 @@ public class Voiture extends VehiculeMotorise implements Vidangeable, Comparable
 
    }
    //Cette Interface dispose d'une méthode qui s'appelle "compareTo"
-   //Cette méthode va retourner un "int" qui doit être supérieur à 0, si l'Objet courant est supérieur à l'Objet passé en paramètre
-   //
-   public int compareTo(Object o) {
-      return 0;
-   }
+   //Cette méthode va retourner un "int" qui doit être supérieur à 0, si l'Objet courant est supérieur à l'Objet passé en paramètre ;
+   //  le "int" va être inférieur à 0, si l'Objet courant est inférieur à l'Objet passé en paramètre ;
+   //  et il va retourner 0, si l'Objet courant est égale à l'Objet passé en paramètre.
+   //Lorsque "Collections.sort" essaie d'ordonner une List, "Collections.sort" va invoquer la méthode "compareTo" de chacun des éléments
+   //  contenus dans la List, et va demander à chacun de ces éléments de se comparer eux-mêmes par rapport aux autres éléments
+   //  qui vont lui être automatiquement fournis.
+   //"Collections.sort" va donc demander à "maVoiture1" de se comparer avec "maVoiture4" ou inversement.
+   //On peut remarquer que ce qui est passé en paramètre est un "Object", non pas une "Voiture",
+   //  car nativement l'Interface "Comparable" autorise des "Object" de nature différentes à se comparer.
+   //  Par exemple : est-ce qu'une "Carotte" est plus grande qu'une "Voiture", un Integer qui vaut 10 est inférieur qu'un Float qui vaut 10,9f
+   //Mais il est difficile de trouver un ordre naturel pour des "Voiture",
+   //  on prend comme critère son âge, la taille ou numéro d'immatriculation ?
+   //Cela dit qu'implémenter "Comparable" n'a pas de sens.
+
 }
