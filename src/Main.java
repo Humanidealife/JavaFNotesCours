@@ -806,7 +806,18 @@ public class Main {
         for (Carre carreComparaisonSet : setCarre){
             //Les éléments devraient être automatiquement ordonnés
             System.out.println("L'ordre des éléments du setCarre est : " + carreComparaisonSet.cote);
+        }
 
+        //S'il s'agissait d'une Map, admettons que le Carre soit la clé de la Map, que la Value soit un Objet de type Voiture
+
+        Map<Carre, Voiture> mapCarre = new TreeMap<>();
+        mapCarre.put(new Carre(201), maVoiture1);
+        mapCarre.put(new Carre(206), maVoiture6);
+        mapCarre.put(new Carre(205), maVoiture5);
+        mapCarre.put(new Carre(210), maVoiture10);
+
+        for (Map.Entry<Carre, Voiture> entryComparaisonMap: mapCarre.entrySet()){
+            System.out.println(entryComparaisonMap.getKey().cote + " " + entryComparaisonMap.getValue().couleur);
         }
     }
 
