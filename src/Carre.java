@@ -10,9 +10,48 @@ public class Carre implements Comparable{
     Carre(long cote){
         this.cote = cote;
     }
+    //On va redéfinir la méthode "equals()"
+    //Pour rappel, "equals()" est une méthode qui est définie au niveau de "Object"
+    //Clique droit, "Generate", "Override Methods", puis "equals"
 
     @Override
-    //On va fait en sorte que des Carre puissent se comparer.
+    //La méthode "equals()" est utilisée dans bien des situations, pas seulement lorsque l'Objet se trouve dans une Collection
+    //On va d'abord vérifier si l'Objet passé en paramètre est bien un "Carre", qui pourrait s'agir d'autres choses
+    public boolean equals(Object obj) {
+        //return super.equals(obj);
+        if (!(obj instanceof Carre)){
+            return false;
+        }
+        //Dans le cas contraire, il va s'agir d'un Carre
+        Carre autreCarre = (Carre)obj;
+        //On va vérifier si le "cote" de cet "autreCarre" a la même valeur que le "cote" du "Carre" courant
+        //Dans ce cas-là, on utilise les mêmes règles que "compareTo"
+        return cote == autreCarre.cote;
+    }
+    //Le fait d'avoir implémenté "compareTo" nous oblige dans quelques sortes de redéfinir "equals()"
+    //Mais le fait de redéfinir "equals()" nous oblige de redéfinir une autre méthode "hashCode()"
+    //"hashCode" est une méthode qui retourne un "int", cet "int" doit être unique. Chaque instance doit montrer un "hashCode" différent
+    // sauf si "hashCode" les considère équivalentes.
+    //La consigne de l'éditeur est la suivante :
+    //  Si la méthode "equals" de deux instances indique une égalité, la méthode "hashCode" doit renvoyer la même valeur.
+    //Parce que dans le cas d'un "hashSet" ou d'une "hashTable", le "hashCode " est appelé en premier pour savoir si deux Objets
+    //  sont potentiellement équivalents.
+    //Et cette façon est plus rapide qu'utiliser "equals" ; ensuite Java va confirmer cette équivalence en appelant la méthode "equals"
+    //On va écrire cette méthode "hashCode"
+
+
+    @Override
+    //On a indiqué que deux "Carre" étaient équivalents si leur "cote" étaient égaux.
+    //On va donc utiliser cette même règle pour le "hashCode".
+    //Un "Long" bénéficie déjà de son propre "hashCode", on va donc simplement faire un "return"
+    public int hashCode() {
+        //Le "hashCode" du "Carre" est donc dépendant du "hashCode" du "cote", deux "Carre" différents auront deux "hashCode" différents,
+        //  deux "Carre" équivalents, donc les "cote" sont équivalents, auront un "hashCode" identique.
+        return cote.hashCode();
+    }
+
+    @Override
+    //On va fait en sorte que des "Carre" puissent se comparer.
     public int compareTo(Object o) {
 
         //On va considérer que ce qui est passé en paramètre est un autreCarre
