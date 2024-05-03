@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Voiture extends VehiculeMotorise implements Vidangeable{
    //Convention d’écriture
    /*
@@ -251,5 +253,41 @@ public class Voiture extends VehiculeMotorise implements Vidangeable{
    //Mais il est difficile de trouver un ordre naturel pour des "Voiture",
    //  on prend comme critère son âge, la taille ou numéro d'immatriculation ?
    //Cela dit qu'implémenter "Comparable" n'a pas de sens.
+
+
+   //Parfois les règles d'équivalence sont un peu différentes entre "equals" et "hashCode".
+   //Auto-génération des méthodes "equals" et "hashCode" selon des règles différentes.
+   //Clique droite, puis Generate, "equals() et hashCode()", une assistance qui propose des critères d'égalité différents.
+   //Ici, on base les deux méthodes "equals" et "hashCode" sur "nbPortes".
+   //On peut remarquer que ces méthodes générées automatiquement sont généralement un peu plus complexes que
+   //  ce que l'on a écrites dans la Class "Carre" manuellement.
+   //Parce qu'elles tiennent compte de toutes les situations qui peuvent subvenir.
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Voiture voiture = (Voiture) o;
+      return nbPortes == voiture.nbPortes;
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hashCode(nbPortes);
+   }
+
+   //De la même manière d'avoir les méthodes "equals" et "compareTo"
+   //  qui suivent exactement les mêmes règles pour ce qui concerne l'équivalence.
+   //Parfois un peu difficile, cela est très fortement dépendant du fait que l'ordre naturel que l'on a choisi a été bien choisi.
+   //Le cas des travaux pratiques va être un bon exemple, parce que l'on avait indiqué que deux "Planet" étaient équivalentes, si elles
+   //  étaient de même distance de leur "Etoile", or certaines personnes considéraient probablement que deux "Planet" qui ont plutôt
+   //  les mêmes noms sont des "Planet" équivalentes. Il serait quasiment impossible de faire co-habiter ces deux règles
+   //  "mêmes noms" et "mêmes distances".
+   //Cela nous amène à nous poser une autre question :
+   //  devons-nous nous contenter de l'ordre naturel pour ordonner des Objets dans une Collection ?
+   //La réponse est non, on pourra considérer que des Objets puissent être ordonnés de différentes manières selon différents critères.
+   //Et on pourrait également considérer qu'ils ne bénéficient pas de l'Interface "Comparable" puissent être ordonnés par ailleurs.
+   //  Dans ce cas-là, on sera probablement intéressé par l'Interface "Comparator" (documentation sur le siteOracle)
+
+
 
 }
