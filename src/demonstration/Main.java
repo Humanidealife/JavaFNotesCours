@@ -589,6 +589,19 @@ public class Main {
         //  élément rencontré correspondant à cet Objet
         list.remove(maVoiture3);
 
+        //Si l'on veut utiliser "List" à la fois sous package "jave.util", à la fois sous package "java.awt",
+        //  il faudra préfixer la Class "List" par le package dans lequel elle se trouve.
+        //Cela peut éviter la confusion.
+        //La List sas préfixe provient de l'import
+        //La List en dessous est explicitement en provenance du package "java.awt"
+        //Mais si l'on ajoute un préfixe comme
+
+        //java.util.List listUtil = new ArrayList();
+
+        //Les imports ne sont plus nécessaires.
+
+        java.awt.List awtList = new java.awt.List();
+
         //Pour récupérer un élement à une position particulière dans la List
         //Mais comme l'on ne peut pas anticiper le type de l'élément récupéré, pour lier le résultat à une variable
         //  cette variable devrait être de type "Object"
