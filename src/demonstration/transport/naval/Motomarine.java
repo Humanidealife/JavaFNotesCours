@@ -1,3 +1,5 @@
+package demonstration.transport.naval;
+
 public class Motomarine extends VehiculeMaritime{
     @Override
     void klaxonner() {

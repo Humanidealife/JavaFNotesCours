@@ -1,9 +1,13 @@
-public class Bateau extends VehiculeMaritime implements Amarrable{
+package demonstration.transport.naval;
+
+import demonstration.transport.Amarrable;
+
+public class Bateau extends VehiculeMaritime implements Amarrable {
     //Tout comme une classe qui implémente une Interface, doit définir le contenu des méthodes de l'Interface
     //  une classe qui hérite d'une classe abstraite doit définir l'implémentation des méthodes abstraites
     //  ici la méthode klaxonner
 
-    int masse;
+    public int masse;
 
     @Override
     public int nbCordes(int vitesseDuVent) {

@@ -1,4 +1,6 @@
-//On fait en sorte que Carre implémente "Comparable"
+package demonstration;
+
+//On fait en sorte que demonstration.Carre implémente "Comparable"
 public class Carre implements Comparable{
     //Cette Class dispose d'une propriété qui est cote (de type "long")
     //long cote;
@@ -6,7 +8,7 @@ public class Carre implements Comparable{
     //Si le type de la propriété est une Class conteneur
     Long cote;
 
-    //Un constructeur à Carre
+    //Un constructeur à demonstration.Carre
     Carre(long cote){
         this.cote = cote;
     }
@@ -16,15 +18,15 @@ public class Carre implements Comparable{
 
     @Override
     //La méthode "equals()" est utilisée dans bien des situations, pas seulement lorsque l'Objet se trouve dans une Collection
-    //On va d'abord vérifier si l'Objet passé en paramètre est bien un "Carre", qui pourrait s'agir d'autres choses
+    //On va d'abord vérifier si l'Objet passé en paramètre est bien un "demonstration.Carre", qui pourrait s'agir d'autres choses
     public boolean equals(Object obj) {
         //return super.equals(obj);
         if (!(obj instanceof Carre)){
             return false;
         }
-        //Dans le cas contraire, il va s'agir d'un Carre
+        //Dans le cas contraire, il va s'agir d'un demonstration.Carre
         Carre autreCarre = (Carre)obj;
-        //On va vérifier si le "cote" de cet "autreCarre" a la même valeur que le "cote" du "Carre" courant
+        //On va vérifier si le "cote" de cet "autreCarre" a la même valeur que le "cote" du "demonstration.Carre" courant
         //Dans ce cas-là, on utilise les mêmes règles que "compareTo"
         return cote == autreCarre.cote;
     }
@@ -41,27 +43,27 @@ public class Carre implements Comparable{
 
 
     @Override
-    //On a indiqué que deux "Carre" étaient équivalents si leur "cote" étaient égaux.
+    //On a indiqué que deux "demonstration.Carre" étaient équivalents si leur "cote" étaient égaux.
     //On va donc utiliser cette même règle pour le "hashCode".
     //Un "Long" bénéficie déjà de son propre "hashCode", on va donc simplement faire un "return"
     public int hashCode() {
-        //Le "hashCode" du "Carre" est donc dépendant du "hashCode" du "cote", deux "Carre" différents auront deux "hashCode" différents,
-        //  deux "Carre" équivalents, donc les "cote" sont équivalents, auront un "hashCode" identique.
+        //Le "hashCode" du "demonstration.Carre" est donc dépendant du "hashCode" du "cote", deux "demonstration.Carre" différents auront deux "hashCode" différents,
+        //  deux "demonstration.Carre" équivalents, donc les "cote" sont équivalents, auront un "hashCode" identique.
         return cote.hashCode();
     }
 
     @Override
-    //On va fait en sorte que des "Carre" puissent se comparer.
+    //On va fait en sorte que des "demonstration.Carre" puissent se comparer.
     public int compareTo(Object o) {
 
         //On va considérer que ce qui est passé en paramètre est un autreCarre
         //On va effectuer un trans-typage de "o"
 
-        //Dans cette méthode, on a comparé nous-même le "cote" de chacun des "Carre" pour savoir quel "Carre" est le plus grand
+        //Dans cette méthode, on a comparé nous-même le "cote" de chacun des "demonstration.Carre" pour savoir quel "demonstration.Carre" est le plus grand
 
         Carre autreCarre = (Carre)o;
 
-        //Mais comment sait-on si un Carre est plus grand qu'un autreCarre ?
+        //Mais comment sait-on si un demonstration.Carre est plus grand qu'un autreCarre ?
         //Sous-entendu si sa surface est plus grande qu'un autreCarre, il suffit de comparer son "cote"
         /*
         if (cote==autreCarre.cote) return 0;
@@ -69,7 +71,7 @@ public class Carre implements Comparable{
         return -1;
         */
 
-        //La méthode "compareTo" sera très simple à écrire, puisqu'il s'agit de comparer le "cote" de chacun des "Carre",
+        //La méthode "compareTo" sera très simple à écrire, puisqu'il s'agit de comparer le "cote" de chacun des "demonstration.Carre",
         //  on peut utiliser l'ordre naturel de la Class "Long" du "cote"
         return this.cote.compareTo(autreCarre.cote);
 

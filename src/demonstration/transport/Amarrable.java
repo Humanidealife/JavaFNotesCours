@@ -1,3 +1,5 @@
+package demonstration.transport;
+
 public interface Amarrable extends Mobile{
 
 

@@ -1,3 +1,5 @@
+package demonstration.transport.naval;
+
 public abstract class VehiculeMaritime {
 
     //Une classe abstraite est comme une autre, elle peut avoir des propriétés et des méthodes,

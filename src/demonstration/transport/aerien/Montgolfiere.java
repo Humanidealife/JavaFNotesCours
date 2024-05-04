@@ -1,4 +1,8 @@
-public class Montgolfiere implements Amarrable{
+package demonstration.transport.aerien;
+
+import demonstration.transport.Amarrable;
+
+public class Montgolfiere implements Amarrable {
 
     int surface;
 
