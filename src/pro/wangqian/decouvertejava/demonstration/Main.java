@@ -8,6 +8,11 @@ import pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture;
 
 import java.util.*;
 
+//Import statique de l'attribut statique "PI" de la Class "Math"
+import static java.lang.Math.PI;
+//Import statique de la méthode "abs" de la Classe "Math"
+import static java.lang.Math.abs;
+
 public class Main {
 
     int unAttribut = 5;
@@ -838,6 +843,19 @@ public class Main {
         for (Map.Entry<Carre, Voiture> entryComparaisonMap: mapCarre.entrySet()){
             System.out.println(entryComparaisonMap.getKey().cote + " " + entryComparaisonMap.getValue().couleur);
         }
+
+        //le mot clé "importStatic"
+        System.out.println("Le nombre PI vaut : " + Math.PI);
+        //Si l'on veut employer plusieurs fois le nombre PI, au lieu d'écrire à chaque fois "Math.PI",
+        //  on va procéder un import statique.
+        //Maintenant, on peut faire référence à PI en écrivant tout simplement PI
+        System.out.println("La nombre de PI après import static " + PI);
+
+        //Par exemple la méthode "abs" de la Class "Math" pour déterminer une valeur absolue peut aussi être importée par
+        //  "import static"
+        int valeurAbsolue1 = Math.abs(-12);
+        //Après l'import, on peut maintenant écrire
+        int valeurAbsolue2 = abs(12);
     }
 
 }
