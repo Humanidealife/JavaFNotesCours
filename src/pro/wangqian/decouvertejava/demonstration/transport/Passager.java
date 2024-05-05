@@ -1,4 +1,4 @@
-package demonstration.transport;
+package pro.wangqian.decouvertejava.demonstration.transport;
 
 //
 public class Passager {

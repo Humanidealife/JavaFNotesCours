@@ -1,6 +1,6 @@
-package demonstration.transport;
+package pro.wangqian.decouvertejava.demonstration.transport;
 
-import demonstration.Ville;
+import pro.wangqian.decouvertejava.demonstration.Ville;
 
 public class VehiculeMotorise {
 
@@ -17,10 +17,10 @@ public class VehiculeMotorise {
     }
 
     //void signifie que cette méthode ne retourne rien
-    //"demonstration.transport.Passager" est le type du paramètre ou argument, et cette classe va être créée
+    //"pro.wangqian.decouvertejava.demonstration.transport.Passager" est le type du paramètre ou argument, et cette classe va être créée
     //"passager" est le nom de cet argument
     public Ville transporter (Passager passager, Ville villeDeDepart){
-        //Si une méthode de cette classe demonstration.transport.VehiculeMotorise ne convient pas à la classe demonstration.transport.terrestre.Voiture
+        //Si une méthode de cette classe pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise ne convient pas à la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
         //Dans ce cas-là on a tout à fiat le droit de réécrire la méthode concernée dans la classe fille
         System.out.println("Le véhicule transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
         System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
@@ -33,7 +33,7 @@ public class VehiculeMotorise {
         //Le type du résultat que l'on fournit en retour doit être déclaré en début de la méthode
         return villeDArrivee;
     }
-    /*demonstration.transport.VehiculeMotorise(){
+    /*pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise(){
 
     }*/
 

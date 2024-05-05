@@ -1,6 +1,6 @@
-package demonstration.transport.aerien;
+package pro.wangqian.decouvertejava.demonstration.transport.aerien;
 
-import demonstration.transport.Amarrable;
+import pro.wangqian.decouvertejava.demonstration.transport.Amarrable;
 
 public class Montgolfiere implements Amarrable {
 

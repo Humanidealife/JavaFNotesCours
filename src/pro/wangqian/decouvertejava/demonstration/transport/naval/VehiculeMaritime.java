@@ -1,4 +1,4 @@
-package demonstration.transport.naval;
+package pro.wangqian.decouvertejava.demonstration.transport.naval;
 
 public abstract class VehiculeMaritime {
 

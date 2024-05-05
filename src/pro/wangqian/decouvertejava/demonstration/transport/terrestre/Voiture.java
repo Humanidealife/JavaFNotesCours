@@ -1,12 +1,12 @@
 //Entête pour "package", cela est une notation obligatoire
-package demonstration.transport.terrestre;
+package pro.wangqian.decouvertejava.demonstration.transport.terrestre;
 
-import demonstration.Vidangeable;
-import demonstration.Ville;
-import demonstration.transport.Moteur;
-import demonstration.transport.Passager;
-import demonstration.transport.TypeBoiteVitesse;
-import demonstration.transport.VehiculeMotorise;
+import pro.wangqian.decouvertejava.demonstration.Vidangeable;
+import pro.wangqian.decouvertejava.demonstration.Ville;
+import pro.wangqian.decouvertejava.demonstration.transport.Moteur;
+import pro.wangqian.decouvertejava.demonstration.transport.Passager;
+import pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse;
+import pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise;
 
 import java.util.Objects;
 
@@ -34,10 +34,10 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    public int nbPortes = 5;
    //boolean automatique;
    //Pour avoir automatique = 1, semi-automatique = 2 et manuelle =3, on ajout un "int"
-   //Pour que ce code soit compréhensible, il faut ajouter à demonstration.transport.terrestre.Voiture des propriétés staitques pour référencer ces valeurs
+   //Pour que ce code soit compréhensible, il faut ajouter à pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture des propriétés staitques pour référencer ces valeurs
 
    //Après instauration de "enum", le "typeBoite" ne correspond plus à un "int", mais à l'un des éléménts de
-   //  l'énumération, il s'agit donc d'un "demonstration.transport.TypeBoiteVitesse"
+   //  l'énumération, il s'agit donc d'un "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse"
    public TypeBoiteVitesse typeBoite;
    // la propriété couleur bénéficie d'une valeur par défaut, qui est null.
    //String n'est pas un type primitif, String est un type objet, c'est une classe
@@ -53,21 +53,21 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //  Donc désormais rapportCourant par défaut vaut "null"
    public Integer rapportCourant;
 
-   //La classe demonstration.transport.terrestre.Voiture n'a plus de propriétés comme carburation et nbCylindres
-   //Mais comme on veux à partir de la demonstration.transport.terrestre.Voiture avoir accès à ces informations
-   //On va donc rajouter une nouvelle propriété : qui se nomme "moteur" et de type "demonstration.transport.Moteur"
-   //Voici une nouvelle propriété qui va aussi caractériser la demonstration.transport.terrestre.Voiture : moteur
-   //On a encapsulé les deux propriétés : "carburation" et "nbCylindres" dans une nouvelle classe : class demonstration.transport.Moteur
+   //La classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture n'a plus de propriétés comme carburation et nbCylindres
+   //Mais comme on veux à partir de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture avoir accès à ces informations
+   //On va donc rajouter une nouvelle propriété : qui se nomme "moteur" et de type "pro.wangqian.decouvertejava.demonstration.transport.Moteur"
+   //Voici une nouvelle propriété qui va aussi caractériser la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture : moteur
+   //On a encapsulé les deux propriétés : "carburation" et "nbCylindres" dans une nouvelle classe : class pro.wangqian.decouvertejava.demonstration.transport.Moteur
    //Ce concept d'encapsulation est fondamental dans les langages d'objet
    //La valeur par défaut des prorpiétés de type Objet est : "null"
 
    //Un constructeur est un bloc d’instructions qui se trouve dans la classe instanciée et il est écrit comme ci-dessous :
    //On rajoute un paramètre dans le constructeur
    public Voiture (String couleur){
-      //Avec "super(new demonstration.transport.Moteur())", on est obligé d'écrire ainsi
-      //Parce que maintenant il est impossible de construire une demonstration.transport.terrestre.Voiture avec simplement la couleur, car le Parent
+      //Avec "super(new pro.wangqian.decouvertejava.demonstration.transport.Moteur())", on est obligé d'écrire ainsi
+      //Parce que maintenant il est impossible de construire une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture avec simplement la couleur, car le Parent
       //  nécessite de bénéficier d'un moteur
-      //super(new demonstration.transport.Moteur());
+      //super(new pro.wangqian.decouvertejava.demonstration.transport.Moteur());
       this();
 
       //Dans le bloc d'instructions on va profiter de la construction pour associer à l'objet, en cours de création,
@@ -84,7 +84,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    public Voiture(){
       //On peut ajouter des paramtères dans le parenthèses de "super"
       //Cela construit la voiture en utilisant tout d'abord le constructeur du Parent qui prend en paramètre un moteur
-      //C'est ailleur ce que l'on serait obligé de faire si l'on avait considéré qu'un demonstration.transport.VehiculeMotorise ne pouvait jamais être construit sans moteur
+      //C'est ailleur ce que l'on serait obligé de faire si l'on avait considéré qu'un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise ne pouvait jamais être construit sans moteur
      super(new Moteur());
    }
    //On a maintenant donc deux constructeurs dans la classe voiture, et libre aux développeurs de choisir le constructeur le plus
@@ -96,7 +96,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
 
    //Mais rien ne nous empêche de créer des constructeurs qui disposent de plusieurs paramètres
 
-   /*demonstration.transport.terrestre.Voiture(String couleur, int nbPortes){
+   /*pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture(String couleur, int nbPortes){
       this.couleur = couleur;
       this.nbPortes = nbPortes;
       System.out.println("Cette voiture est construite avec la couleur et le nombre de portes comme paramètres");
@@ -104,14 +104,14 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
 
    //"super" nous permet, lors de l'exécution, de faire référence à la classe Parente, notamment pour en invoquer un constructeur
    public Voiture(Moteur moteur){
-      //Ici on invoque le constructeur de demonstration.transport.VehiculeMotorise qui prend en paramètre le moteur
+      //Ici on invoque le constructeur de pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise qui prend en paramètre le moteur
       super(moteur);
    }
 
    //On peut construire une voiture en recevant en paramètre les constituants du moteur
    public Voiture(String carburation, int nbCylindres){
 
-      //super(new demonstration.transport.Moteur());
+      //super(new pro.wangqian.decouvertejava.demonstration.transport.Moteur());
       //OU c'est encore mieur de faire comme ci-dessous
       this();
 
@@ -161,13 +161,13 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Mais cette méthode est possiblement être paramètrée lors de son invocation
    //Il faut donc mettre dans les paraenthèses les différents paramètres que l'on peut valoriser lors de son invocation
    //Il faut connaître le rapport courant de la voiture
-   //this : dans la méthode passerRapport de la classe demonstration.transport.terrestre.Voiture, c'est le rapportCourant de la maVoiture4 qui est incrémenté de 1
+   //this : dans la méthode passerRapport de la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture, c'est le rapportCourant de la maVoiture4 qui est incrémenté de 1
    //parce que c'est la méthode passerRapport de maVoiture4 qui a été invoquée
    //jusque là le mot clé "this" n'a pas été utilisé pour indiquer que dans la méthode on veut manipuler l'objet courant
    //mais il est tout à fait autorisé de le faire.
    //Cette méthode est une méthode d'instance, parce qu'elle implique l'attribut "rapportCourant"
    //Cet attribut "rapportCourant" de l'objet particulier est manipulé.
-   //Cette méthode nécessite d'être invoquée à partir d'une demonstration.transport.terrestre.Voiture en particulier
+   //Cette méthode nécessite d'être invoquée à partir d'une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture en particulier
 
    /*
    int passerRapport(boolean augmenter){
@@ -223,7 +223,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Mais on ne peut avoir qu'une seule ellipse dans une méthode ou d'un constructeur
    //  et le paramètre sous forme d'éllipse doit impérativement constituer le dernier paramètre des arguments
    public Ville transporter (Passager passager, Ville villeDeDepart, Ville... villeEtapes){
-      //Si une méthode de cette classe demonstration.transport.VehiculeMotorise ne convient pas à la classe demonstration.transport.terrestre.Voiture
+      //Si une méthode de cette classe pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise ne convient pas à la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
       //Dans ce cas-là on a tout à fiat le droit de réécrire la méthode concernée dans la classe fille
       System.out.println("La voiture transporte un passager qui s'appelle " + passager.prenom + " " + passager.nom);
       System.out.println("Et la ville de départ est " + villeDeDepart.nom + " " + villeDeDepart.pays);
@@ -246,7 +246,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    }
 
    public static void main(String... args){
-      System.out.println("Ici je commence dans la classe demonstration.transport.terrestre.Voiture");
+      System.out.println("Ici je commence dans la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture");
 
    }
    //Cette Interface dispose d'une méthode qui s'appelle "compareTo"
@@ -257,10 +257,10 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //  contenus dans la List, et va demander à chacun de ces éléments de se comparer eux-mêmes par rapport aux autres éléments
    //  qui vont lui être automatiquement fournis.
    //"Collections.sort" va donc demander à "maVoiture1" de se comparer avec "maVoiture4" ou inversement.
-   //On peut remarquer que ce qui est passé en paramètre est un "Object", non pas une "demonstration.transport.terrestre.Voiture",
+   //On peut remarquer que ce qui est passé en paramètre est un "Object", non pas une "pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture",
    //  car nativement l'Interface "Comparable" autorise des "Object" de nature différentes à se comparer.
-   //  Par exemple : est-ce qu'une "Carotte" est plus grande qu'une "demonstration.transport.terrestre.Voiture", un Integer qui vaut 10 est inférieur qu'un Float qui vaut 10,9f
-   //Mais il est difficile de trouver un ordre naturel pour des "demonstration.transport.terrestre.Voiture",
+   //  Par exemple : est-ce qu'une "Carotte" est plus grande qu'une "pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture", un Integer qui vaut 10 est inférieur qu'un Float qui vaut 10,9f
+   //Mais il est difficile de trouver un ordre naturel pour des "pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture",
    //  on prend comme critère son âge, la taille ou numéro d'immatriculation ?
    //Cela dit qu'implémenter "Comparable" n'a pas de sens.
 
@@ -270,7 +270,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Clique droite, puis Generate, "equals() et hashCode()", une assistance qui propose des critères d'égalité différents.
    //Ici, on base les deux méthodes "equals" et "hashCode" sur "nbPortes".
    //On peut remarquer que ces méthodes générées automatiquement sont généralement un peu plus complexes que
-   //  ce que l'on a écrites dans la Class "demonstration.Carre" manuellement.
+   //  ce que l'on a écrites dans la Class "pro.wangqian.decouvertejava.demonstration.Carre" manuellement.
    //Parce qu'elles tiennent compte de toutes les situations qui peuvent subvenir.
    @Override
    public boolean equals(Object o) {

@@ -1,10 +1,10 @@
-package demonstration;
+package pro.wangqian.decouvertejava.demonstration;
 
-import demonstration.transport.*;
-import demonstration.transport.naval.Bateau;
-import demonstration.transport.naval.Port;
-import demonstration.transport.terrestre.UsineDAssemblageVoiture;
-import demonstration.transport.terrestre.Voiture;
+import pro.wangqian.decouvertejava.demonstration.transport.*;
+import pro.wangqian.decouvertejava.demonstration.transport.naval.Bateau;
+import pro.wangqian.decouvertejava.demonstration.transport.naval.Port;
+import pro.wangqian.decouvertejava.demonstration.transport.terrestre.UsineDAssemblageVoiture;
+import pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture;
 
 import java.util.*;
 
@@ -12,16 +12,16 @@ public class Main {
 
     int unAttribut = 5;
     void quelqueChose(){
-        System.out.println("Une méthode de la classe demonstration.Main");
+        System.out.println("Une méthode de la classe pro.wangqian.decouvertejava.demonstration.Main");
     }
 
-    //Ce qui est spécial pour la classe "demonstration.Main", c'est qu'elle possède une méthode "main"
+    //Ce qui est spécial pour la classe "pro.wangqian.decouvertejava.demonstration.Main", c'est qu'elle possède une méthode "main"
     //La méthode "main" est statique, mais cette méthode constitue le point d'entrée de notre programme, notre logiciel
     //  quand "main" est écrite ainsi "public static void main(String... args){}"
-    //Lorsque l'on exécute cette classe avec l'IDE ou avec des lignes de commande, on indique à la machine virtuelle que "demonstration.Main" dispose
+    //Lorsque l'on exécute cette classe avec l'IDE ou avec des lignes de commande, on indique à la machine virtuelle que "pro.wangqian.decouvertejava.demonstration.Main" dispose
     //  la méthode "main", et que c'est à cet endroit-là que l'on veut commencer
     //Cette méthode "public static void main(String... args){}", dans un logiciel, pourrait apparaître à de multiples endroits.
-    //Par exemple, on peut ajouter cette méthode "main" dans la classe "demonstration.transport.terrestre.Voiture"
+    //Par exemple, on peut ajouter cette méthode "main" dans la classe "pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture"
 
     //Le tableau de String ou cet ensemble de String nous permet, lorsque l'on exécute la classe, de lui envoyer des paramètres complémentaires
     public static void main(String[] args) {
@@ -270,7 +270,7 @@ public class Main {
 
         Voiture maVoiture6 = new Voiture();
         maVoiture6.nbPortes = 5;
-        //Pour qu'une voiture bénéficie d'un moteur, il faut également instancier la classe demonstration.transport.Moteur pour obtenir un objet de type demonstration.transport.Moteur
+        //Pour qu'une voiture bénéficie d'un moteur, il faut également instancier la classe pro.wangqian.decouvertejava.demonstration.transport.Moteur pour obtenir un objet de type pro.wangqian.decouvertejava.demonstration.transport.Moteur
         Moteur moteur6 = new Moteur();
         moteur6.carburation = "Diesel";
         moteur6.nbCylindres = 6;
@@ -287,7 +287,7 @@ public class Main {
 
         maVoiture1.moteur = moteur6;
         //Comment dissocier un moteur à une voiture ?
-        //Il suffit de valoriser la prorpiété moteur de la demonstration.transport.terrestre.Voiture en "null"
+        //Il suffit de valoriser la prorpiété moteur de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture en "null"
         //Mais le motuer6 existe toujours en part entière, il n'est seulement plus associé à la maVoiture6
         maVoiture6.moteur = null;
 
@@ -299,7 +299,7 @@ public class Main {
         Ville villeDeDepart1 = new Ville();
         villeDeDepart1.nom = "Le Mans";
         villeDeDepart1.pays = "France";
-        //On donne donc en paramètre de cette méthode un objet (passager1) de type demonstration.transport.Passager
+        //On donne donc en paramètre de cette méthode un objet (passager1) de type pro.wangqian.decouvertejava.demonstration.transport.Passager
         //On peut récupérer ce retour ici en le stockant dans une variable du même type que le résultat retourné
         Ville villeDArrivee1 = maVoiture1.transporter(passager1,villeDeDepart1);
         System.out.println("Le passager est arrivé dans la ville de " + villeDArrivee1.nom + " " + villeDArrivee1.pays);
@@ -324,35 +324,35 @@ public class Main {
         Voiture maVoiture8 = new Voiture("Jaune", 4);
 
         //On peut également faire comme ci-dessous
-        //La variable pourrait être de type demonstration.transport.VehiculeMotorise
+        //La variable pourrait être de type pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise
         //maVoiture9 a plusieurs formes, ce que l'on appelle le polymorphisme
-        //On construit un objet de type demonstration.transport.terrestre.Voiture qui sera déposé dans la mémoire avec une adresse
-        //On localise cette adresse à travers d'une variable maVoiture9 sous le type demonstration.transport.VehiculeMotorise
-        //A partir de là, maVoiture9 est considérée comme un demonstration.transport.VehiculeMotorise, mais non-plus comme une demonstration.transport.terrestre.Voiture
-        //  les proprétés spécifiquement liées à une demonstration.transport.terrestre.Voiture sont inconnues pour maVoiture9
+        //On construit un objet de type pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture qui sera déposé dans la mémoire avec une adresse
+        //On localise cette adresse à travers d'une variable maVoiture9 sous le type pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise
+        //A partir de là, maVoiture9 est considérée comme un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise, mais non-plus comme une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
+        //  les proprétés spécifiquement liées à une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture sont inconnues pour maVoiture9
         VehiculeMotorise maVoiture9 = new Voiture();
-        //Il serait intéressant de pouvoir indiquer explicitement que maVoiture9 n'est pas qu'un demonstration.transport.VehiculeMotorise, elle est aussi une demonstration.transport.terrestre.Voiture
-        //  lors de l'utilisation des propriétés spécifiques d'une demonstration.transport.terrestre.Voiture
+        //Il serait intéressant de pouvoir indiquer explicitement que maVoiture9 n'est pas qu'un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise, elle est aussi une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
+        //  lors de l'utilisation des propriétés spécifiques d'une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
         //Il y a deux manière de faire
         //Soit créer une nouvelle variable, donner à cette variable en valeur de maVoiture9, mais avec un petit préfixe
         //  dans ce préfixe on indique le type de la classe sous laquelle on veut considérer maVoiture9SousFormeVoiture.
-        //Avec cette façon, maVoiture9 va être transtypée en demonstration.transport.terrestre.Voiture pour être associée à la variable maVoiture9SousFormeVoiture,
+        //Avec cette façon, maVoiture9 va être transtypée en pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture pour être associée à la variable maVoiture9SousFormeVoiture,
         //  à partir de là, on peut utiliser maVoiture9SousFormeVoiture à chaque fois que l'on a besoin accéder à une propriété ou à une méthode
-        //  spécifique à la classe demonstration.transport.terrestre.Voiture
-        /*demonstration.transport.terrestre.Voiture maVoiture9SousFormeVoiture = (demonstration.transport.terrestre.Voiture)maVoiture9;*/
+        //  spécifique à la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
+        /*pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture maVoiture9SousFormeVoiture = (pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture)maVoiture9;*/
 
         //Mais si l'on ne veut pas créer une varaible supplémentaire, on peut transtyper la variable directement en écrivant
         //C'est un transtypage à la volée
-        //((demonstration.transport.terrestre.Voiture)maVoiture9).automatique = true;
+        //((pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture)maVoiture9).automatique = true;
 
 
         Moteur moteur10 = new Moteur();
         Voiture maVoiture10 = new Voiture(moteur10);
 
-        //On peut obtenir un demonstration.transport.VehiculeMotorise en utlisant l'demonstration.transport.UsineDAssemblage
+        //On peut obtenir un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise en utlisant l'pro.wangqian.decouvertejava.demonstration.transport.UsineDAssemblage
         UsineDAssemblage uda = new UsineDAssemblage();
 
-        //demonstration.transport.UsineDAssemblage ne nous dit pas de quel type de demonstration.transport.VehiculeMotorise il s'agit.
+        //pro.wangqian.decouvertejava.demonstration.transport.UsineDAssemblage ne nous dit pas de quel type de pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise il s'agit.
         VehiculeMotorise vm1 = uda.assembler();
 
 
@@ -365,10 +365,10 @@ public class Main {
         p1.accueilDEngin(bt1);
 
         Voiture peugeot206 = new Voiture();
-        //Mon Objet est toujours une demonstration.transport.terrestre.Voiture, mais dans le code on considère que cet demonstration.transport.terrestre.Voiture comme un demonstration.transport.VehiculeMotorise, ni plus ni moins
+        //Mon Objet est toujours une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture, mais dans le code on considère que cet pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture comme un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise, ni plus ni moins
         VehiculeMotorise peugeot307 = new Voiture();
-        //On peut également, grâce au fait que demonstration.transport.terrestre.Voiture implémente l'Interface demonstration.Vidangeable, considérer une demonstration.transport.terrestre.Voiture sous forme d'Objet demonstration.Vidangeable
-        //A ce moment là, bien sûr que la peugeot508 est ici, ne pourrait être que demonstration.Vidangeable
+        //On peut également, grâce au fait que pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture implémente l'Interface pro.wangqian.decouvertejava.demonstration.Vidangeable, considérer une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture sous forme d'Objet pro.wangqian.decouvertejava.demonstration.Vidangeable
+        //A ce moment là, bien sûr que la peugeot508 est ici, ne pourrait être que pro.wangqian.decouvertejava.demonstration.Vidangeable
         //La seule chose à laquelle j'ai accès, c'est la méthode vidanger
         Vidangeable peugeot508 = new Voiture();
 
@@ -458,11 +458,11 @@ public class Main {
 
         //"boiteSemiAuto" n'est ici qu'un raccourci pour dire la valeur "2"
 
-        //Pour valoriser le "demonstration.transport.TypeBoiteVitesse" d'une demonstration.transport.terrestre.Voiture, il fuat obligatoirement séléctionner
-        //  une des valeurs de l'énumération "demonstration.transport.TypeBoiteVitesse", le choix est donc restreint à une gamme prédéterminée
+        //Pour valoriser le "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse" d'une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture, il fuat obligatoirement séléctionner
+        //  une des valeurs de l'énumération "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse", le choix est donc restreint à une gamme prédéterminée
         maVoiture10.typeBoite = TypeBoiteVitesse.SEMI_AUTO;
 
-        //Avec un constructeur du "demonstration.transport.TypeBoiteVitesse"
+        //Avec un constructeur du "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse"
         System.out.println("Le type de ma boîte de vitesse est " + maVoiture10.typeBoite.nomTypeBoite);
 
         //On peut aussi utiliser des tpes énumérés dans un "switch case"
@@ -495,12 +495,12 @@ public class Main {
         //Le type de la variable sera le type du contenu du tableau
         //Ces tableaux pour l'instant sont constitués de 5 espaces vides. Plus précisément,
         //  de 5 fois la valeur 0 pour le tableau de "int", de 5 caractères vides pour le tableau de "char",
-        //  et de 5 fois "null" pour le tableau de "demonstration.transport.terrestre.Voiture". Les tableaux d'Objets sont au départ constitués de valeur "null".
+        //  et de 5 fois "null" pour le tableau de "pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture". Les tableaux d'Objets sont au départ constitués de valeur "null".
 
         int [] tableauDeInt = new int[5];
         //S'il s'agissait d'un tableau de caractères
         char[] tableauDeChar = new char[5];
-        //S'il s'agissait d'un tableau de demonstration.transport.terrestre.Voiture (Objet, pas type primitif)
+        //S'il s'agissait d'un tableau de pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture (Objet, pas type primitif)
         Voiture[] tableauDeVoiture = new Voiture[5];
 
         //Pour valoriser un ou plusieurs éléments d'un tableau,
@@ -536,7 +536,7 @@ public class Main {
 
         Voiture voitureDeTransport1 = new Voiture();
 
-        /*demonstration.Ville[] villeEtapes = new demonstration.Ville[3];
+        /*pro.wangqian.decouvertejava.demonstration.Ville[] villeEtapes = new pro.wangqian.decouvertejava.demonstration.Ville[3];
         villeEtapes[0] = etape1;
         villeEtapes[1] = etape2;
         villeEtapes[2] = etape3;*/
@@ -619,7 +619,7 @@ public class Main {
         //Mais il est quand même très rare de stocker les Objets de différents types dans une Collection.
         //  En général, c'est un seul type d'Objet dans une Collection
         //Depuis Java 5, il est possible de préciser ce qui sera déposé dans une collection, grâce à l'Opérateur Diamant <>
-        //List<demonstration.transport.terrestre.Voiture> listDeVoiture = new ArrayList<demonstration.transport.terrestre.Voiture>();
+        //List<pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture> listDeVoiture = new ArrayList<pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture>();
         //Mais depuis Java 7, on peut écrire comme ci-dessous
         //Ce qui se cache derrière cet Opérateur Diamant, c'est "Generic"
         //"Generic" était une révolution pour Java qui dépasse largement le cadre des Collections
@@ -627,7 +627,7 @@ public class Main {
         listDeVoiture.add(maVoiture1);
         listDeVoiture.add(maVoiture4);
         listDeVoiture.add(maVoiture6);
-        //Comme la Collection contient obligatoirement des Objets de type demonstration.transport.terrestre.Voiture,
+        //Comme la Collection contient obligatoirement des Objets de type pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture,
         //  il n'est plus nécessaire de trans-typer le résultat après un "get"
         Voiture voitureSelectionnee1 = listDeVoiture.get(1);
 
@@ -639,7 +639,7 @@ public class Main {
         setDeVoiture.add(maVoiture4);
         //setDeVoiture.add(maVoiture1);
 
-        //Une boucle "Foreach", à partir de la Collection de demonstration.transport.terrestre.Voiture, s'appelle ici setDeVoiture.
+        //Une boucle "Foreach", à partir de la Collection de pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture, s'appelle ici setDeVoiture.
         //À droite des deux points : "setDeVoiture" est la Collection sur laquelle l'on veut itérer
         //À gauche des deux points : la variable qui va contenir successivement chacun des éléments de la Collection lors de son parcours
         for (Voiture voiture : setDeVoiture){
@@ -657,14 +657,14 @@ public class Main {
         //Un "iterator" est une interface, pour obtenir un "iterator", il faut d'abord prendre la collection
         //Cette méthode "iterator" va retourner une Classe qui implémente l'interface "Iterator"
         //Si l'on ne veut pas être embêté par le trans-typage, on peut ajouter un Opérateur Diamant
-        //  pour préciser ce que va contenir l' "iterator". Ici, il s'agit d'un "iterator" de demonstration.transport.terrestre.Voiture.
+        //  pour préciser ce que va contenir l' "iterator". Ici, il s'agit d'un "iterator" de pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture.
         //Il faut également importer cette interface
         //"iterator" va commencer au début de la collection. Et à chaque fois que l'on va appeler la méthode "next" de l' "iterator",
         //  on va obtenir le prochain élément.
 
         Iterator<Voiture> it = setDeVoiture.iterator();
         /*
-        demonstration.transport.terrestre.Voiture v = it.next();
+        pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture v = it.next();
         System.out.println("la couleur obtenue par l'itérator est " + v.couleur);
         */
 
@@ -685,7 +685,7 @@ public class Main {
         //  il n'y a pas de méthode pour récupérer un élément particulier dans le la collection "HashSet"
         //Au pire, on peut transformer le "Set" en tableau
         Voiture VoitureDansSet1 = (Voiture)setDeVoiture.toArray()[0];
-        System.out.println("la couleur de la demonstration.transport.terrestre.Voiture dans Set en index 0 est " + VoitureDansSet1.couleur);
+        System.out.println("la couleur de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture dans Set en index 0 est " + VoitureDansSet1.couleur);
 
         //Création d'une "HashMap"
         //Par défaut sans l'opérateur diamant, comme pour les "List" et "Set", on peut ajouter tous types d'Objet dans notre "Map",
@@ -800,20 +800,20 @@ public class Main {
         }
         //Tout cela est possible parce que les "int" dispose d'un ordre naturel, une Class qui dispose d'un ordre naturel
         //  est une Class qui implémente l'Interface "Comparable".
-        //C'est le cas pour les "int", mais ce n'est pas le cas pour les Objets demonstration.transport.terrestre.Voiture
+        //C'est le cas pour les "int", mais ce n'est pas le cas pour les Objets pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
 
-        //On va créer une List de demonstration.Carre
+        //On va créer une List de pro.wangqian.decouvertejava.demonstration.Carre
         List<Carre> listCarre = new ArrayList<>();
         listCarre.add(new Carre(15));
         listCarre.add(new Carre(19));
         listCarre.add(new Carre(5));
         listCarre.add(new Carre(3));
-        //On ordonne cette List de demonstration.Carre
+        //On ordonne cette List de pro.wangqian.decouvertejava.demonstration.Carre
         Collections.sort(listCarre);
 
         for (Carre carreComparaison : listCarre){
             System.out.println("Le coté du Carré dans l'ordre est : " + carreComparaison.cote);
-        }//On peut voir que l'on a ajouté un ordre naturel à la Class demonstration.Carre
+        }//On peut voir que l'on a ajouté un ordre naturel à la Class pro.wangqian.decouvertejava.demonstration.Carre
         //Lorsque l'on ajoute un ordre naturel, il est généralement admis que cet ordre naturel est unique.
 
         Set<Carre> setCarre = new TreeSet<>();
@@ -827,7 +827,7 @@ public class Main {
             System.out.println("L'ordre des éléments du setCarre est : " + carreComparaisonSet.cote);
         }
 
-        //S'il s'agissait d'une Map, admettons que le demonstration.Carre soit la clé de la Map, que la Value soit un Objet de type demonstration.transport.terrestre.Voiture
+        //S'il s'agissait d'une Map, admettons que le pro.wangqian.decouvertejava.demonstration.Carre soit la clé de la Map, que la Value soit un Objet de type pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
 
         Map<Carre, Voiture> mapCarre = new TreeMap<>();
         mapCarre.put(new Carre(201), maVoiture1);

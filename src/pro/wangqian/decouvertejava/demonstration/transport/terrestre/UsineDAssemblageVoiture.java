@@ -1,6 +1,6 @@
-package demonstration.transport.terrestre;
+package pro.wangqian.decouvertejava.demonstration.transport.terrestre;
 
-import demonstration.transport.UsineDAssemblage;
+import pro.wangqian.decouvertejava.demonstration.transport.UsineDAssemblage;
 
 public class UsineDAssemblageVoiture extends UsineDAssemblage {
     //Grâce à la covariance des méthodes on peut réécrire une méthode de la classe Parente, ici c'est assembler

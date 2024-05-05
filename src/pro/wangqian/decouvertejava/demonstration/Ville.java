@@ -1,4 +1,4 @@
-package demonstration;
+package pro.wangqian.decouvertejava.demonstration;
 
 public class Ville {
     public String nom;

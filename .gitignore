@@ -39,7 +39,7 @@ bin/
 # BlueJ files
 *.ctxt
 
-# demonstration.transport.Mobile Tools for Java (J2ME)
+# pro.wangqian.decouvertejava.demonstration.transport.Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
 # Package Files #

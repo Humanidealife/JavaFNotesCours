@@ -1,6 +1,6 @@
-package demonstration.transport.naval;
+package pro.wangqian.decouvertejava.demonstration.transport.naval;
 
-import demonstration.transport.Amarrable;
+import pro.wangqian.decouvertejava.demonstration.transport.Amarrable;
 
 public class Bateau extends VehiculeMaritime implements Amarrable {
     //Tout comme une classe qui implémente une Interface, doit définir le contenu des méthodes de l'Interface
