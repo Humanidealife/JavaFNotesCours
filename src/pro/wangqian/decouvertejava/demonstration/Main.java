@@ -171,30 +171,30 @@ public class Main {
         }
 
         Voiture maVoiture1 = new Voiture();
-        maVoiture1.nbPortes = 3;
+        maVoiture1.setNbPortes(3);
         //maVoiture1.automatique = true;
-        maVoiture1.couleur = "Blanche";
+        maVoiture1.setCouleur("Blanche");
 
-        System.out.println("La couleur de ma voiture 1 est de couleur " + maVoiture1.couleur);
+        System.out.println("La couleur de ma voiture 1 est de couleur " + maVoiture1.getCouleur());
 
-        maVoiture1.couleur = "Grise";
-        maVoiture1.nbPortes = 5;
-        System.out.println("Mais finalement la couleur de ma voiture 1 est de couleur " + maVoiture1.couleur + " et elle dispose de " + maVoiture1.nbPortes + " portes");
+        maVoiture1.setCouleur("Grise");
+        maVoiture1.setNbPortes(5);
+        System.out.println("Mais finalement la couleur de ma voiture 1 est de couleur " + maVoiture1.getCouleur() + " et elle dispose de " + maVoiture1.getNbPortes() + " portes");
 
         //Sans lui affecter de valeur, la valeur de maVoiture2 est indéfinie. Sa valeur par défautn'est pas null
         Voiture maVoiture2 = null;
 
         Voiture maVoiture3 = new Voiture();
-        System.out.println(maVoiture3.couleur);
+        System.out.println(maVoiture3.getCouleur());
 
-        if (maVoiture3.couleur == null){
+        if (maVoiture3.getCouleur() == null){
             System.out.println("La couleur de ma voiture 3 est null");
         }
 
         //On peut utiliser null pour supprimer la valeur actuelle d'une variable de type Objet
 
-        maVoiture1.couleur = null;
-        System.out.println(maVoiture1.couleur);
+        maVoiture1.setCouleur(null);
+        System.out.println(maVoiture1.getCouleur());
         //En écrivant ceci, on exécute toutes les instructions qui se trouvent dans la méthode "klaxonner".
         maVoiture1.klaxonner();
 
@@ -274,7 +274,7 @@ public class Main {
         System.out.println(maVoiture1.vitesse);
 
         Voiture maVoiture6 = new Voiture();
-        maVoiture6.nbPortes = 5;
+        maVoiture6.setNbPortes(5);
         //Pour qu'une voiture bénéficie d'un moteur, il faut également instancier la classe pro.wangqian.decouvertejava.demonstration.transport.Moteur pour obtenir un objet de type pro.wangqian.decouvertejava.demonstration.transport.Moteur
         Moteur moteur6 = new Moteur();
         moteur6.carburation = "Diesel";
@@ -437,15 +437,15 @@ public class Main {
         //Si l'on veut explicitement donner une valeur à la propriété "rapportCourant"
         //Comme ceci toutes les caractéristiques de l'objet sont accessible
         //Par exemple la méthode ".equals()"
-        maVoiture6.rapportCourant = Integer.valueOf(4);//Mais cela n'est pas vraiment nécessaire avec l'auto-boxing
+        maVoiture6.setRapportCourant(Integer.valueOf(4));;//Mais cela n'est pas vraiment nécessaire avec l'auto-boxing
         //On peut en réalité directement faire comme ci-dessous:
         //rapportCourant contient bien un "Integer", un objet
-        maVoiture7.rapportCourant = 3;
+        maVoiture7.setRapportCourant(3);
 
         //Avec auto-unboxing, on peut écrire directement
-        maVoiture7.rapportCourant++;
+        maVoiture7.setRapportCourant(maVoiture7.getRapportCourant()+1);
 
-        System.out.println(maVoiture6.rapportCourant);
+        System.out.println(maVoiture6.getRapportCourant());
 
         //La conversion de type "int" est converit en "String"
         //Avec cette façon, il faut que la valeur de la "String" soit compatible avec le "int"
@@ -465,10 +465,10 @@ public class Main {
 
         //Pour valoriser le "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse" d'une pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture, il fuat obligatoirement séléctionner
         //  une des valeurs de l'énumération "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse", le choix est donc restreint à une gamme prédéterminée
-        maVoiture10.typeBoite = TypeBoiteVitesse.SEMI_AUTO;
+        maVoiture10.setTypeBoite(TypeBoiteVitesse.SEMI_AUTO);
 
         //Avec un constructeur du "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse"
-        System.out.println("Le type de ma boîte de vitesse est " + maVoiture10.typeBoite.nomTypeBoite);
+        System.out.println("Le type de ma boîte de vitesse est " + maVoiture10.getTypeBoite().nomTypeBoite);
 
         //On peut aussi utiliser des tpes énumérés dans un "switch case"
         /*switch (maVoiture10.typeBoite) {
@@ -487,7 +487,7 @@ public class Main {
         //maVoiture10.typeBoite = 2;
 
         //Une autre méthode pour savoir quel est le "int" qui est derrière chaque propriété ? Par exemple pour semi-automatique
-        System.out.println(maVoiture10.typeBoite.ordinal());
+        System.out.println(maVoiture10.getTypeBoite().ordinal());
 
         //Comment récupérer un élément de l'énumération en donnant simplement son nom sous forme de String
         TypeBoiteVitesse semiAuto = TypeBoiteVitesse.valueOf("SEMI_AUTO");
@@ -517,7 +517,7 @@ public class Main {
         //Pour un tableau d'Object
         tableauDeVoiture[1] = maVoiture8;
         tableauDeVoiture[4] = new Voiture("Diesel",4);
-        System.out.println("Le deuxième élément de mon tableau de voiture est " + tableauDeVoiture[1].couleur);
+        System.out.println("Le deuxième élément de mon tableau de voiture est " + tableauDeVoiture[1].getCouleur());
 
         //Mot clé "length" qui permet de connaître la taille d'un tableau.
         //Il s'agit de compter la taille du tableau sans aucune considération de son contenu
@@ -613,13 +613,13 @@ public class Main {
         Object objetSelectionne1 = list.get(0);
         System.out.println(objetSelectionne1);
 
-        maVoiture1.couleur = "Arc-en-ciel";
-        maVoiture6.couleur = "bleu foncé";
-        maVoiture4.couleur = "On ne sait pas";
+        maVoiture1.setCouleur("Arc-en-ciel");
+        maVoiture6.setCouleur("bleu foncé");
+        maVoiture4.setCouleur("On ne sait pas");
 
         //Et si l'on est sûr du type de l'Objet sélectionné, on peut effectuer un trans-typage
         Voiture objetSelectionne2 = (Voiture)list.get(1);
-        System.out.println(objetSelectionne2.couleur);
+        System.out.println(objetSelectionne2.getCouleur());
 
         //Mais il est quand même très rare de stocker les Objets de différents types dans une Collection.
         //  En général, c'est un seul type d'Objet dans une Collection
@@ -649,7 +649,7 @@ public class Main {
         //À gauche des deux points : la variable qui va contenir successivement chacun des éléments de la Collection lors de son parcours
         for (Voiture voiture : setDeVoiture){
             //Ici, on peut manipuler la variable "voiture"
-            System.out.println("la couleur obtenue par foreach est " + voiture.couleur);
+            System.out.println("la couleur obtenue par foreach est " + voiture.getCouleur());
             //Dans ce bloc d'instructions l'on peut manipuler tous les objets de la collection, à une exception près :
             //On ne peut pas modifier la collection elle-même pendant son parcours,
             //  par exemple, on ne peut pas rajouter une voiture dans la collection ou en supprimer une durant l'itération
@@ -678,7 +678,7 @@ public class Main {
         while(it.hasNext()){
             //Dans le bloc d'instruction, on manipule le prochain élément de la collection grâce au ".next"
             Voiture vIterator=it.next();
-            System.out.println("la couleur obtenue par l'itérator et la méthode 'hasNext' est " + vIterator.couleur);
+            System.out.println("la couleur obtenue par l'itérator et la méthode 'hasNext' est " + vIterator.getCouleur());
 
         }
 
@@ -690,7 +690,7 @@ public class Main {
         //  il n'y a pas de méthode pour récupérer un élément particulier dans le la collection "HashSet"
         //Au pire, on peut transformer le "Set" en tableau
         Voiture VoitureDansSet1 = (Voiture)setDeVoiture.toArray()[0];
-        System.out.println("la couleur de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture dans Set en index 0 est " + VoitureDansSet1.couleur);
+        System.out.println("la couleur de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture dans Set en index 0 est " + VoitureDansSet1.getCouleur());
 
         //Création d'une "HashMap"
         //Par défaut sans l'opérateur diamant, comme pour les "List" et "Set", on peut ajouter tous types d'Objet dans notre "Map",
@@ -706,7 +706,7 @@ public class Main {
         //Mais cette fois-ci, la méthode "get" ne prend pas en paramètre l'index, sous-entendu la position se trouve l'Objet dans la "Map",
         //  ici "get" attend en paramètre la clé de l'objet que l'on veut récupérer
         Voiture mapDeVoiture1 = mapDeVoiture.get("1");
-        System.out.println("La couleur de voiture obtenue par la map est " + mapDeVoiture1.couleur);
+        System.out.println("La couleur de voiture obtenue par la map est " + mapDeVoiture1.getCouleur());
         //Pour parcourir une "Map", on peut utiliser "foreach"
         //À droite des deux points : la collection sur laquelle l'on veut itérer,
         //  à gauche des deux points : la variable qui va successivement stocker chacun des éléments de la "Map".
@@ -726,7 +726,7 @@ public class Main {
             String stringCle = entryDeVoiture.getKey();
             //Pou obtenir la valeur c'est
             Voiture voitureValeur = entryDeVoiture.getValue();
-            System.out.println("L'élément suivant a pour clé : " + stringCle + ", il s'agit d'une voiture de couleur " + voitureValeur.couleur);
+            System.out.println("L'élément suivant a pour clé : " + stringCle + ", il s'agit d'une voiture de couleur " + voitureValeur.getCouleur());
         }
         //Parfois ce qui nous intéresse ce n'est pas l'ensemble des couples (clé + valeur),
         //  mais c'est l'ensemble des clés ou bien l'ensemble des valeurs uniquement
@@ -739,7 +739,7 @@ public class Main {
         //Pour afficher l'ensemble des valeurs
         //Attention : ici "mapDeVoiture.values()" on retourne une "List", puisqu'il est possible d'avoir des doublons dans les valeurs.
         for(Voiture mapDeVoitureValeur : mapDeVoiture.values()){
-            System.out.println("L'élément suivant a pour couleur: " + mapDeVoitureValeur.couleur);
+            System.out.println("L'élément suivant a pour couleur: " + mapDeVoitureValeur.getCouleur());
         }
 
         //Mais comme pour les "List" et pour les "Set" pour tous types de Collections,
@@ -841,7 +841,7 @@ public class Main {
         mapCarre.put(new Carre(210), maVoiture10);
 
         for (Map.Entry<Carre, Voiture> entryComparaisonMap: mapCarre.entrySet()){
-            System.out.println(entryComparaisonMap.getKey().cote + " " + entryComparaisonMap.getValue().couleur);
+            System.out.println(entryComparaisonMap.getKey().cote + " " + entryComparaisonMap.getValue().getCouleur());
         }
 
         //le mot clé "importStatic"

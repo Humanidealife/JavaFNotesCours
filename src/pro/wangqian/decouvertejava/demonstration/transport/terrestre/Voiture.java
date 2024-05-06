@@ -31,19 +31,57 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Désormais toutes les voitures instanciées vont avoir 4 roues
    public static int nbRoues = 4;
 
-   public int nbPortes = 5;
+   //"Getter" et "Setter"
+
+   //La syntaxe de "getNbPortes" suit un certain standard,
+   //  cette méthode commence par "get"n et ensuite suivie par le nom de la propriété qui nous intéresse avec la
+   //  première lettre en majuscule.
+   public int getNbPortes() {
+      return nbPortes;
+   }
+   //La méthode "setNbPortes" prend en paramètre la nouvelle valeur de la propriété que l'on veut modifier.
+   //Son contenu est très simple,
+   public void setNbPortes(int nbPortes) {
+      this.nbPortes = nbPortes;
+   }
+
+   public TypeBoiteVitesse getTypeBoite() {
+      return typeBoite;
+   }
+
+   public void setTypeBoite(TypeBoiteVitesse typeBoite) {
+      this.typeBoite = typeBoite;
+   }
+
+   public String getCouleur() {
+      return couleur;
+   }
+
+   public void setCouleur(String couleur) {
+      this.couleur = couleur;
+   }
+
+   public Integer getRapportCourant() {
+      return rapportCourant;
+   }
+
+   public void setRapportCourant(Integer rapportCourant) {
+      this.rapportCourant = rapportCourant;
+   }
+
+   private int nbPortes = 5;
    //boolean automatique;
    //Pour avoir automatique = 1, semi-automatique = 2 et manuelle =3, on ajout un "int"
    //Pour que ce code soit compréhensible, il faut ajouter à pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture des propriétés staitques pour référencer ces valeurs
 
    //Après instauration de "enum", le "typeBoite" ne correspond plus à un "int", mais à l'un des éléménts de
    //  l'énumération, il s'agit donc d'un "pro.wangqian.decouvertejava.demonstration.transport.TypeBoiteVitesse"
-   public TypeBoiteVitesse typeBoite;
+   private TypeBoiteVitesse typeBoite;
    // la propriété couleur bénéficie d'une valeur par défaut, qui est null.
    //String n'est pas un type primitif, String est un type objet, c'est une classe
    //Cette classe qui représente une chaîne de caractères bénéficie de propriétés
    //  dont une est la séquence des caractères qui compose la chaîne de caractères
-   public String couleur;
+   private String couleur;
 
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    //Mais avec son type primitif, on ne sait pas si ce rapportCourant est 0 signifiant on est sur le point mort
@@ -51,7 +89,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //int rapportCourant;
    //On le transforme en Integer
    //  Donc désormais rapportCourant par défaut vaut "null"
-   public Integer rapportCourant;
+   private Integer rapportCourant;
 
    //La classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture n'a plus de propriétés comme carburation et nbCylindres
    //Mais comme on veux à partir de la pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture avoir accès à ces informations
