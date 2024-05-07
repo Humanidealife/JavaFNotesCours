@@ -83,7 +83,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //On veut que "numeroImmatriculation" soit compatible avec le standard français,
    //  c'est-à-dire (deux lettres, un espace, trois chiffres, un espace et deux lettres).
 
-   public void Immatriculer (String numeroImmatriculation){
+   public void Immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException,VoitureDejaImmatriculeeException{
       //On peut au moins nous assurer que la longueur de cette "String" soit 9
       //Un cas d'exception
       if (numeroImmatriculation.length() != 9){
