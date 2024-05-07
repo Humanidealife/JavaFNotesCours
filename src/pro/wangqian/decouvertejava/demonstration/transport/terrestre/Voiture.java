@@ -72,6 +72,33 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
       this.rapportCourant = rapportCourant;
    }
 
+   private String immatriculation;
+
+   public String getImmatriculation() {
+      return immatriculation;
+   }
+
+   //Méthode qui a vocation de valoriser "immatriculation".
+   //Cette méthode ressemble quelque part au "Setter", c'est pourquoi l'on n'a pas ajouté de "Setter"
+   //On veut que "numeroImmatriculation" soit compatible avec le standard français,
+   //  c'est-à-dire (deux lettres, un espace, trois chiffres, un espace et deux lettres).
+
+   public void Immatriculer (String numeroImmatriculation){
+      //On peut au moins nous assurer que la longueur de cette "String" soit 9
+      //Un cas d'exception
+      if (numeroImmatriculation.length() != 9){
+
+      }
+      //Une autre cas d'exception
+      //Si la Voiture possède déjà une immatriculation
+      if (this.immatriculation != null){
+
+      }
+
+      this.immatriculation = numeroImmatriculation;
+   }
+
+
    private int nbPortes = 5;
    //boolean automatique;
    //Pour avoir automatique = 1, semi-automatique = 2 et manuelle =3, on ajout un "int"
