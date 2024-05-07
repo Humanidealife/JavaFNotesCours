@@ -260,6 +260,18 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Finalement "villeEtapes" bénéficie de toutes les capacités d'un tableau
    //Mais on ne peut avoir qu'une seule ellipse dans une méthode ou d'un constructeur
    //  et le paramètre sous forme d'éllipse doit impérativement constituer le dernier paramètre des arguments
+
+   /**
+    *
+    * transporter est une méthode qui permet de transporter d'un passager d'une ville de départ
+    *   à une ville d'arrivée en passant par des étapes.
+    *   Puis, on peut générer une documentation au format HTML, en faisant "Tools" -> "Generate JavaDoc"
+    *
+    * @param passager
+    * @param villeDeDepart
+    * @param villeEtapes
+    * @return
+    */
    public Ville transporter (Passager passager, Ville villeDeDepart, Ville... villeEtapes){
       //Si une méthode de cette classe pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise ne convient pas à la classe pro.wangqian.decouvertejava.demonstration.transport.terrestre.Voiture
       //Dans ce cas-là on a tout à fiat le droit de réécrire la méthode concernée dans la classe fille
