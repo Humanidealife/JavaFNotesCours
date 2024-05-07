@@ -29,6 +29,9 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //variable de classe, le contenu est commun à toutes les instances
    //variable d'instance, le contenu peut différer en fonction des objets
    //Désormais toutes les voitures instanciées vont avoir 4 roues
+
+   //Si l'on combine "final" avec "static", on parle alors de "CONSTANTE" et il est recommandé d'écrire en Java
+   //  le nom d'une "CONSTANTE" tout en majuscule par exemple "NB_ROUES"
    public static int nbRoues = 4;
 
    //"Getter" et "Setter"
@@ -281,7 +284,12 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
       System.out.println("La taille du tableau villeEtapes est " + villeEtapes.length);
       //retour de la villeDArrivee
       //Il faut d'abord instancier une ville
-      Ville villeDArrivee = new Ville();
+      //On pourrait préfixer la variable "villeDArrivee" par "final".
+      //"villeDArrivee" est une "Ville", cette variable pointe sur l'Objet "Ville".
+      //Mais ce qui est 'final" c'est la variable "villeDArrivee", ce n'est absolument pas le contenu de la "Ville'
+      //  On peut tout à fait modifier le "nom" et n'importe quelles propriétés de cette "Ville"
+      final Ville villeDArrivee;
+      villeDArrivee = new Ville();
       villeDArrivee.nom ="Rennes";
       villeDArrivee.pays = "France";
       //Le type du résultat que l'on fournit en retour doit être déclaré en début de la méthode
