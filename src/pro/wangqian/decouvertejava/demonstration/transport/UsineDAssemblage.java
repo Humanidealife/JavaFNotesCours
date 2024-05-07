@@ -13,9 +13,14 @@ package pro.wangqian.decouvertejava.demonstration.transport;
 /**
  *
  */
+
+//On peut aussi déclarer une Class « final »,
+// dans ce cas-là, on indique tout simplement que cette Class ne pourra pas être étendue.
 public class UsineDAssemblage {
 
     //Cette méthode "assembler" doit retourner un pro.wangqian.decouvertejava.demonstration.transport.VehiculeMotorise
+    // Une méthode pourrait également être qualifiée de « final »,
+    // cela signifie pour méthode « public » qu’elle ne pourra pas être modifiée dans une Class héritante.
     public VehiculeMotorise assembler(){
         Moteur moteurvm = new Moteur();
         /*
