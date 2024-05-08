@@ -83,17 +83,27 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //On veut que "numeroImmatriculation" soit compatible avec le standard français,
    //  c'est-à-dire (deux lettres, un espace, trois chiffres, un espace et deux lettres).
 
-   public void Immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException,VoitureDejaImmatriculeeException{
+   //Dans notre code actuel, on détecte un cas d’exception « if (numeroImmatriculation.length() != 9){} »,
+   //  et notre méthode indique qu’elle est susceptible de rejeter une exception de type « NombreDeCaractereInvalideException ».
+   //Il est temps de rejeter réellement cette exception lorsque dans notre méthode on va détecter l’exception,
+   //  dans le bloc de « if »
+   public void Immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException/*, VoitureDejaImmatriculeeException*/{
       //On peut au moins nous assurer que la longueur de cette "String" soit 9
       //Un cas d'exception
       if (numeroImmatriculation.length() != 9){
-
+         //On va utiliser le mot clé "throw" suivi d'une instance de l'exception que l'on veut rejeter.
+         //On peut utiliser le constructeur sans paramètre,
+         //  ou bien utiliser le constructeur capable de prendre en paramètre un message lisible pour l'être humain
+         //À partir du moment, on rejette une exception, le traitement de la méthode est intérrompu,
+         //  tout ce qui se trouve par la suite est complètement ignoré. Cette réaction est ce que l'on cherche à faire.
+         throw new NombreDeCaractereInvalideException("Le numéro " + numeroImmatriculation +
+                                                      " ne comporte pas le nombre de caractères attendu");
       }
       //Une autre cas d'exception
       //Si la Voiture possède déjà une immatriculation
-      if (this.immatriculation != null){
+      /*if (this.immatriculation != null){
 
-      }
+      }*/
 
       this.immatriculation = numeroImmatriculation;
    }
@@ -115,7 +125,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
 
    //Ajout d'une propriété, comme on ne donne pas de valeur de départ, sa valuer par défaut va être 0
    //Mais avec son type primitif, on ne sait pas si ce rapportCourant est 0 signifiant on est sur le point mort
-   //  ou bien que ce rapportCourant n'a juste pas encore  té valorisé
+   //  ou bien que ce rapportCourant n'a juste pas encore été valorisé
    //int rapportCourant;
    //On le transforme en Integer
    //  Donc désormais rapportCourant par défaut vaut "null"
