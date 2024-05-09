@@ -856,6 +856,9 @@ public class Main {
         int valeurAbsolue1 = Math.abs(-12);
         //Après l'import, on peut maintenant écrire
         int valeurAbsolue2 = abs(12);
+
+        UsineDAssemblageVoiture uav = new UsineDAssemblageVoiture();
+        uav.assembler();
     }
 
 }
