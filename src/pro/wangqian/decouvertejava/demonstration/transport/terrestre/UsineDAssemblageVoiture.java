@@ -23,6 +23,7 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
         //Si tout se passe bien, Java va continuer à traîter les instructions qui suivent la méthode "immatriculer"
         try {
             v.immatriculer("AA 444 AA");
+            v.immatriculer("BB 555 BB");
             System.out.println("Tout s'est bien passé");
             return v;
             //En revanche, si la méthode "immatriculer" rejette une exception de type NombreDeCaractereInvalideException,
@@ -30,10 +31,16 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
             //On peut tout simplement dire c'est toutes exceptions de type "Exception".
             //"Exception" inclut par héritage toutes les exceptions spécifiques, cela nous permet
             //  d'attraper(catch) toutes exceptions sans se préoccuper de leurs types.
-        } catch (Exception e) {
+        } /*catch (NombreDeCaractereInvalideException e) {
             //On va rentrer dans le bloc ici,
             System.out.println(e.getMessage());
             //throw new RuntimeException(e);
+        } catch (VoitureDejaImmatriculeeException e){
+            System.out.println(e.getMessage());
+        }*/
+        //Une version de catch plus simple et intélligente
+        catch (NombreDeCaractereInvalideException | VoitureDejaImmatriculeeException e){
+            System.out.println(e.getMessage());
         }
         //On peut réellement compter sur le fait que tout ce qui se trouve dans le bloc "finally" va à la fin être effectué.
         //Quand bien même nos blocs "try" ou "catch" contiendraient un autre "throws" ou même un "return".

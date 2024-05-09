@@ -87,7 +87,7 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //  et notre méthode indique qu’elle est susceptible de rejeter une exception de type « NombreDeCaractereInvalideException ».
    //Il est temps de rejeter réellement cette exception lorsque dans notre méthode on va détecter l’exception,
    //  dans le bloc de « if »
-   public void immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException/*, VoitureDejaImmatriculeeException*/{
+   public void immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException, VoitureDejaImmatriculeeException{
       //On peut au moins nous assurer que la longueur de cette "String" soit 9
       //Un cas d'exception
       if (numeroImmatriculation.length() != 9){
@@ -101,9 +101,9 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
       }
       //Une autre cas d'exception
       //Si la Voiture possède déjà une immatriculation
-      /*if (this.immatriculation != null){
-
-      }*/
+      if (this.immatriculation != null){
+         throw new VoitureDejaImmatriculeeException("Cette voiture est déjà immatriculée du numéro : " + this.immatriculation);
+      }
 
       this.immatriculation = numeroImmatriculation;
    }
