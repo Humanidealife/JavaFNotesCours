@@ -22,8 +22,9 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
         //"try" signifie essayer, essayer d'exécuter la méthode "immatriculer".
         //Si tout se passe bien, Java va continuer à traîter les instructions qui suivent la méthode "immatriculer"
         try {
-            v.immatriculer("AA5 AA");
+            v.immatriculer("AA 444 AA");
             System.out.println("Tout s'est bien passé");
+            return v;
             //En revanche, si la méthode "immatriculer" rejette une exception de type NombreDeCaractereInvalideException,
             //  et bien, on va rentrer dans le bloc "catch"(attraper) spécifique à l'exception considérée.
             //On peut tout simplement dire c'est toutes exceptions de type "Exception".
@@ -33,6 +34,12 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
             //On va rentrer dans le bloc ici,
             System.out.println(e.getMessage());
             //throw new RuntimeException(e);
+        }
+        //On peut réellement compter sur le fait que tout ce qui se trouve dans le bloc "finally" va à la fin être effectué.
+        //Quand bien même nos blocs "try" ou "catch" contiendraient un autre "throws" ou même un "return".
+
+        finally{
+            System.out.println("Ce message s'affiche dans tous les cas");
         }
         return v;
     }
