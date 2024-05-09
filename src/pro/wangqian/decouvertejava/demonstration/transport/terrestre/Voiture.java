@@ -90,12 +90,11 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    public void immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException, VoitureDejaImmatriculeeException{
 
       //On rejette une erreur en utilisant la Class "UnknownError" qui est une Class fille de "Error".
-      throw new UnknownError("Erreur inconnues");
+      //throw new UnknownError("Erreur inconnues");
 
       //On peut au moins nous assurer que la longueur de cette "String" soit 9
       //Un cas d'exception
-      /*
-      
+
       if (numeroImmatriculation.length() != 9){
          //On va utiliser le mot clé "throw" suivi d'une instance de l'exception que l'on veut rejeter.
          //On peut utiliser le constructeur sans paramètre,
@@ -111,9 +110,15 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
          throw new VoitureDejaImmatriculeeException("Cette voiture est déjà immatriculée du numéro : " + this.immatriculation);
       }
 
+      //Pour simuler une Exception "NullPointerException"
+      //On affiche la longueur de l'immatriculation courante,
+      //  mais le problème est que la propriété "immatriculation" est au départ "null"(la valeur par défaut).
+      //Le fait de vouloir invoquer une méthode sur un Objet "null" va générer cette Exception "NullPointerException". Cette Exception n'est pas déclarée
+      //  avec "throws", et pour l'instant, elle n'est pas attrapée dans la méthode "assembler"
+      System.out.println("Le numéro est actuellement de longueur : " + this.immatriculation.length());
+
       this.immatriculation = numeroImmatriculation;
 
-      */
    }
 
 

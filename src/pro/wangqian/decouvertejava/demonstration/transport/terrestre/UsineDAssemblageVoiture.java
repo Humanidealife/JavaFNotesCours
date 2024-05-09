@@ -46,8 +46,8 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
         //Quand bien même nos blocs "try" ou "catch" contiendraient un autre "throws" ou même un "return".
 
         //On pourrait également ajouter un bloc de "catch"
-        catch (UnknownError ue){
-            System.out.println("Cette erreur inconnue est attrapée");
+        catch (NullPointerException ue){
+            System.out.println("NullPointerException est attrapée");
         }
 
         finally{
