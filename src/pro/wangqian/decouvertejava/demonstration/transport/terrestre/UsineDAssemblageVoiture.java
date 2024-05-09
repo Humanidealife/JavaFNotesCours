@@ -45,6 +45,11 @@ public class UsineDAssemblageVoiture extends UsineDAssemblage {
         //On peut réellement compter sur le fait que tout ce qui se trouve dans le bloc "finally" va à la fin être effectué.
         //Quand bien même nos blocs "try" ou "catch" contiendraient un autre "throws" ou même un "return".
 
+        //On pourrait également ajouter un bloc de "catch"
+        catch (UnknownError ue){
+            System.out.println("Cette erreur inconnue est attrapée");
+        }
+
         finally{
             System.out.println("Ce message s'affiche dans tous les cas");
         }

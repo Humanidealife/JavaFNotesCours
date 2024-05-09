@@ -88,8 +88,14 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
    //Il est temps de rejeter réellement cette exception lorsque dans notre méthode on va détecter l’exception,
    //  dans le bloc de « if »
    public void immatriculer (String numeroImmatriculation) throws NombreDeCaractereInvalideException, VoitureDejaImmatriculeeException{
+
+      //On rejette une erreur en utilisant la Class "UnknownError" qui est une Class fille de "Error".
+      throw new UnknownError("Erreur inconnues");
+
       //On peut au moins nous assurer que la longueur de cette "String" soit 9
       //Un cas d'exception
+      /*
+      
       if (numeroImmatriculation.length() != 9){
          //On va utiliser le mot clé "throw" suivi d'une instance de l'exception que l'on veut rejeter.
          //On peut utiliser le constructeur sans paramètre,
@@ -106,6 +112,8 @@ public class Voiture extends VehiculeMotorise implements Vidangeable {
       }
 
       this.immatriculation = numeroImmatriculation;
+
+      */
    }
 
 
